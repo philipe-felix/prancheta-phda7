@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sindicato FC - Laboratório</title>
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* DESIGN SYSTEM - TOKENS */
+        :root {
+            color-scheme: dark;
+            --sf-bg: #13131F;
+            --sf-surface: #1C1C2D;
+            --sf-surface-raised: #222238;
+            --sf-accent: #E94560;
+            --sf-accent-hover: #D93652;
+            --sf-success: #4ECCA3;
+            --sf-error: #FF4D4D;
+            --sf-text: #FFFFFF;
+            --sf-muted: #A2A8D3;
+            --sf-border: #2A2A40;
+            
+            --sf-radius-sm: 8px;
+            --sf-radius-md: 12px;
+            
+            --sf-shadow-card: 0 12px 32px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .025);
+            --sf-glow-accent: 0 0 0 2px rgba(233, 69, 96, .25), 0 0 15px rgba(233, 69, 96, .15);
+            --sf-glow-success: 0 0 24px rgba(78, 204, 163, .12);
+            
+            --sf-font-body: "Inter", system-ui, sans-serif;
+            --sf-font-numeric: "Roboto Mono", "SFMono-Regular", Consolas, monospace;
+        }
+
+        /* ESTRUTURA GLOBAL */
+        body {
+            font-family: var(--sf-font-body);
+            background-color: var(--sf-bg);
+            color: var(--sf-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: var(--sf-surface);
+            padding: 32px 24px;
+            border-radius: var(--sf-radius-md);
+            box-shadow: var(--sf-shadow-card);
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid var(--sf-border);
+        }
+
+        .header { text-align: center; margin-bottom: 32px; }
+        .tagline { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--sf-muted); font-weight: 700; margin-bottom: 8px; display: block; }
+        h1 { font-size: 28px; font-weight: 800; margin: 0; color: var(--sf-text); }
+
+        /* INPUTS E BOTÕES */
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-size: 12px; font-weight: 700; color: var(--sf-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        input[type="number"] {
+            width: 100%;
+            background-color: var(--sf-bg);
+            border: 1px solid var(--sf-border);
+            color: var(--sf-text);
+            font-family: var(--sf-font-numeric);
+            font-size: 16px;
+            padding: 14px 16px;
+            border-radius: var(--sf-radius-sm);
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+        input[type="number"]:focus { border-color: var(--sf-accent); box-shadow: var(--sf-glow-accent); }
+
+        button {
+            width: 100%;
+            background-color: var(--sf-accent);
+            color: var(--sf-text);
+            font-family: var(--sf-font-body);
+            font-weight: 750;
+            font-size: 16px;
+            padding: 16px;
+            border: none;
+            border-radius: var(--sf-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 12px;
+        }
+        button:hover { background-color: var(--sf-accent-hover); }
+        button:disabled { background-color: var(--sf-surface-raised); color: var(--sf-muted); cursor: not-allowed; }
+
+        /* RESULTADOS */
+        #resultado-container {
+            display: none;
+            margin-top: 24px;
+            padding: 20px;
+            background-color: var(--sf-surface-raised);
+            border-radius: var(--sf-radius-sm);
+            text-align: center;
+            border: 1px solid var(--sf-border);
+        }
+        .resultado-sucesso { border-color: rgba(78, 204, 163, 0.3) !important; box-shadow: var(--sf-glow-success); }
+        .resultado-sucesso .destaque-numero { color: var(--sf-success); }
+        .resultado-erro { border-color: rgba(255, 77, 77, 0.3) !important; }
+        .resultado-erro .destaque-numero { color: var(--sf-error); font-family: var(--sf-font-body); font-size: 14px; }
+        
+        .status-label { font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--sf-muted); margin-bottom: 8px; display: block; }
+        .destaque-numero { font-family: var(--sf-font-numeric); font-size: 32px; font-weight: 800; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <span class="tagline">Laboratório F2P</span>
+            <h1 id="app-title">Carregando...</h1>
+        </div>
+        
+        <div class="input-group">
+            <label id="lbl-current">GRL Atual (%)</label>
+            <input type="number" id="current_ovr" placeholder="Ex: 40">
+        </div>
+
+        <div class="input-group">
+            <label id="lbl-target">GRL Desejado (%)</label>
+            <input type="number" id="target_ovr" placeholder="Ex: 178">
+        </div>
+
+        <button id="btn-calc" onclick="calcular()">Calcular Evolução</button>
+
+        <div id="resultado-container">
+            <span class="status-label" id="status-text">Simulação Concluída</span>
+            <p class="destaque-numero" id="resultado-valor"></p>
+        </div>
+    </div>
+
+    <script>
+        // Lógica de Internacionalização
+        async function carregarTextos() {
+            try {
+                const response = await fetch('/api/interface');
+                const data = await response.json();
+                const t = data.textos;
+
+                document.getElementById('app-title').innerText = t.app_title || "Calculadora Sindicato FC";
+                document.getElementById('lbl-current').innerText = t.label_current || "GRL Atual (%)";
+                document.getElementById('lbl-target').innerText = t.label_target || "GRL Desejado (%)";
+                document.getElementById('btn-calc').innerText = t.btn_calc || "Calcular Evolução";
+            } catch (error) {
+                console.error("Erro de conexão. Utilizando PT-BR padrão.");
+                document.getElementById('app-title').innerText = "Calculadora Sindicato FC";
+            }
+        }
+
+        // Lógica de Cálculo de Backend
+        async function calcular() {
+            const current = parseFloat(document.getElementById('current_ovr').value);
+            const target = parseFloat(document.getElementById('target_ovr').value);
+            const btn = document.getElementById('btn-calc');
+            const resultContainer = document.getElementById('resultado-container');
+            const resultValor = document.getElementById('resultado-valor');
+            const statusText = document.getElementById('status-text');
+
+            if (isNaN(current) || isNaN(target)) return;
+
+            btn.disabled = true;
+            btn.innerText = "Processando...";
+            resultContainer.style.display = "none";
+            resultContainer.className = "";
+
+            try {
+                const response = await fetch('/api/calcular', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ current_ovr: current, target_ovr: target })
+                });
+                
+                const data = await response.json();
+                resultContainer.style.display = "block";
+
+                if (data.erro) {
+                    resultContainer.classList.add('resultado-erro');
+                    statusText.innerText = "Alerta";
+                    resultValor.innerText = data.erro;
+                } else {
+                    resultContainer.classList.add('resultado-sucesso');
+                    statusText.innerText = "Evolução Necessária";
+                    resultValor.innerText = `+${data.maletas} Maletas`;
+                }
+            } catch (error) {
+                resultContainer.style.display = "block";
+                resultContainer.classList.add('resultado-erro');
+                statusText.innerText = "Erro de Conexão";
+                resultValor.innerText = "Falha no servidor.";
+            } finally {
+                btn.disabled = false;
+                btn.innerText = document.getElementById('app-title').innerText.includes("Calculator") ? "Calculate Growth" : "Calcular Evolução";
+            }
+        }
+
+        window.onload = carregarTextos;
+    </script>
+</body>
+</html>
