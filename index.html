@@ -3,105 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prancheta do PHDA7 | Laboratório F2P Sindicato FC</title>
-
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta name="theme-color" content="#09090b">
-
+    <title>Sindicato FC | Max Fut Engine</title>
+    
+    <!-- Tailwind CSS Padrão SaaS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: { 
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    },
                     colors: {
-                        carbon: '#09090b',
-                        card: '#141418',
-                        crimson: '#e11d48',
-                        gold: '#f59e0b',
+                        background: '#030712', // Cinza muito escuro/quase preto
+                        surface: '#0f172a', // Slate 900
+                        panel: '#1e293b', // Slate 800
+                        primary: '#10b981', // Emerald 500 (Sucesso/Top Eleven)
+                        primary_hover: '#059669',
+                        accent: '#3b82f6', // Blue 500
+                        danger: '#ef4444', // Red 500
                     }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #09090b; color: #f4f4f5; }
-        .glow-red { box-shadow: 0 0 25px -5px rgba(225, 29, 72, 0.35); }
-        .glow-gold { box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3); }
-        .gradient-text {
-            background: linear-gradient(90deg, #ef4444 0%, #f59e0b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        body { background-color: #030712; color: #f8fafc; }
+        .glass-panel { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .neon-glow { box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.4); }
+        .neon-border { border: 1px solid rgba(16, 185, 129, 0.5); }
+        
+        /* Ocultar scrollbar para manter look de app */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
     </style>
 </head>
-<body class="antialiased selection:bg-crimson selection:text-white">
+<body class="antialiased min-h-screen flex flex-col">
 
-    <!-- HEADER / NAVBAR -->
-    <header class="sticky top-0 z-50 bg-carbon/90 backdrop-blur-md border-b border-zinc-800">
-        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="favicon.png" alt="Sindicato FC" class="w-10 h-10 rounded-full border border-gold/60 object-cover" onerror="this.src='https://placehold.co/80x80/141418/f59e0b?text=PHDA7'">
-                <div>
-                    <span class="font-black tracking-tight text-white text-lg">PRANCHETA <span class="text-crimson">PHDA7</span></span>
-                    <span class="block text-[10px] uppercase tracking-widest text-gold font-semibold">Laboratório F2P - Sindicato FC</span>
+    <!-- NAVBAR PREMIUM -->
+    <nav class="fixed w-full top-0 z-50 glass-panel border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-primary flex items-center justify-center font-black text-background text-xl">S</div>
+                    <span class="font-bold text-lg tracking-tight">Sindicato <span class="text-primary">FC</span></span>
                 </div>
-            </div>
-            <div class="flex items-center gap-2">
-                <a href="#calculadora" class="bg-card border border-gold/50 text-gold hover:bg-gold hover:text-black text-xs font-bold px-3 py-2 rounded-lg transition">
-                    🧬 Engenharia F2P
-                </a>
-                <a href="#contas" class="bg-crimson hover:bg-red-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition">
-                    Serviços
+                <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
+                    <a href="#simulador" class="hover:text-primary transition">Simulador de Treino</a>
+                    <a href="#servicos" class="hover:text-primary transition">Contratação de Serviços</a>
+                </div>
+                <a href="https://wa.me/5500000000000?text=Fala%20PHDA7!%20Vim%20pelo%20app%20e%20preciso%20da%20sua%20engenharia." target="_blank" 
+                   class="bg-primary hover:bg-primary_hover text-background font-bold px-4 py-2 rounded-lg text-sm transition neon-glow">
+                    Falar com Especialista
                 </a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative overflow-hidden py-12 px-4 text-center border-b border-zinc-900">
-        <div class="max-w-3xl mx-auto">
-            <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-xs font-bold px-3 py-1 rounded-full mb-4">
-                ⚡ ENGENHARIA REVERSA NO TOP ELEVEN
-            </span>
-            <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+    <!-- HERO SECTION (App Style) -->
+    <section class="pt-32 pb-12 px-4 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-panel border border-slate-700 text-xs font-semibold text-slate-300 mb-6">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Motor de Cálculo Ratinhos/MaxFut Atualizado
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
                 A matemática não perdoa.<br>
-                <span class="gradient-text">O Sindicato FC também não.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                    Pare de queimar maletas.
+                </span>
             </h1>
-            <p class="text-zinc-400 text-sm md:text-base mb-8 max-w-xl mx-auto">
-                Execute o Ciclo de Derretimento de 3 anos, quebre a Regra dos 180% e atinja 220%+ de GRL sem desperdiçar maletas verdes com o nosso motor de cálculo.
+            <p class="text-slate-400 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+                Descubra o teto exato da Regra dos 180%. Saiba quando o seu exercício vai parar de dar XP e calcule o custo da sua Idade de Ouro.
             </p>
+        </div>
+    </section>
 
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="#calculadora" class="bg-crimson hover:bg-red-700 text-white font-extrabold px-6 py-3.5 rounded-xl transition glow-red">
-                    🧬 Abrir Laboratório Matemático
-                </a>
-                <a href="https://wa.me/5500000000000?text=Fala%20PHDA7!%20Vim%20pelo%20site%20e%20quero%20aplicar%20a%20engenharia%20F2P%20no%20meu%20clube." 
-                   class="bg-emerald-500 hover:bg-emerald-600 text-black font-extrabold px-6 py-3.5 rounded-xl flex items-center justify-center gap-2 transition">
-                    💬 Contactar no WhatsApp
-                </a>
+    <!-- O SIMULADOR REVERSO (RATINHOS ENGINE) -->
+    <section id="simulador" class="px-4 pb-24">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="grid lg:grid-cols-12 gap-6">
+                
+                <!-- PAINEL ESQUERDO: CONTROLES -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-panel p-6 rounded-2xl">
+                        <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                            Configuração do Exercício
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 mb-1">Selecione o Exercício</label>
+                                <select id="drillSelect" onchange="loadDrillInputs()" class="w-full bg-background border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition">
+                                    <option value="1">Passe, vá e dispare (Vel, Pas, Chu)</option>
+                                    <option value="2">Marcar Homem a Homem (Cor, Dri, Fin)</option>
+                                    <option value="3">Jogada na ponta (Cab, Cru, Chu, Fin)</option>
+                                    <option value="4">Parar o atacante (For, Cor, Mar, Crg, Dri)</option>
+                                    <option value="5">Academia (Con, For)</option>
+                                </select>
+                            </div>
+
+                            <div class="pt-4 border-t border-slate-800">
+                                <div class="flex justify-between items-center mb-3">
+                                    <label class="block text-xs font-semibold text-slate-400">Atributos do Exercício (%)</label>
+                                    <button onclick="simulateMutant()" class="text-[10px] bg-panel hover:bg-slate-700 border border-slate-600 px-2 py-1 rounded text-primary transition">Auto-Preencher Mutante</button>
+                                </div>
+                                <div id="drillInputs" class="space-y-3">
+                                    <!-- Inputs Gerados via JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-accent">
+                        <h3 class="text-sm font-bold mb-2">Engenharia do Dia 28</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            A base do projeto F2P é manter atributos cinzentos em 1%. Garanta o congelamento do seu jogador nas reservas entre os 18 e 20 anos. O treino acima simula a explosão aos 21 anos (A Idade de Ouro).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PAINEL DIREITO: MOTOR DE ANÁLISE E CONVERSÃO -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-6 rounded-2xl h-full flex flex-col">
+                        <h2 class="text-lg font-bold mb-6 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            Motor de Cálculo (Regra 180%)
+                        </h2>
+
+                        <!-- Dashboards -->
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-background border border-slate-800 rounded-xl p-4">
+                                <span class="text-xs text-slate-400 block mb-1">Média Atual do Treino</span>
+                                <div class="flex items-end gap-2">
+                                    <span id="avgDisplay" class="font-mono text-3xl font-black text-white">0.0</span>
+                                    <span class="text-sm font-bold text-slate-500 mb-1">%</span>
+                                </div>
+                                <span id="avgStatus" class="text-[10px] font-bold text-primary mt-2 block">XP MÁXIMO LIBERADO</span>
+                            </div>
+                            
+                            <div class="bg-background border border-slate-800 rounded-xl p-4">
+                                <span class="text-xs text-slate-400 block mb-1">Margem até falha (180%)</span>
+                                <div class="flex items-end gap-2">
+                                    <span id="marginDisplay" class="font-mono text-3xl font-black text-primary">0.0</span>
+                                    <span class="text-sm font-bold text-slate-500 mb-1">%</span>
+                                </div>
+                                <span class="text-[10px] text-slate-500 mt-2 block">Pontos médios restantes</span>
+                            </div>
+                        </div>
+
+                        <!-- Barra de Limite -->
+                        <div class="mb-8">
+                            <div class="flex justify-between text-xs font-semibold mb-2">
+                                <span class="text-slate-400">Progresso do Exercício</span>
+                                <span class="text-danger">Trava Motor: 180%</span>
+                            </div>
+                            <div class="h-3 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div id="progressBar" class="h-full bg-primary transition-all duration-500" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- O ISCO DE CONVERSÃO (LEAD MAGNET) -->
+                        <div class="mt-auto bg-gradient-to-br from-panel to-slate-900 border border-slate-700 rounded-xl p-5 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[40px]"></div>
+                            
+                            <h3 class="text-sm font-bold text-white mb-2 relative z-10">Tempo é Maleta. E Maleta é Dinheiro.</h3>
+                            <p class="text-xs text-slate-400 mb-4 relative z-10 leading-relaxed">
+                                Atingir os <strong class="text-primary">250%+</strong> exige combinar exercícios perfeitamente, calcular as médias a cada treino e fazer cerca de <strong class="text-white">6.000 cliques manuais</strong>. Um erro de matemática e o seu jogador trava nos 150%.
+                            </p>
+                            
+                            <a href="https://wa.me/5500000000000?text=Fala%20PHDA7!%20Fiz%20o%20cálculo%20no%20simulador%20e%20não%20tenho%20tempo%20para%20fazer%20isso%20manual.%20Quero%20contratar%20a%20sua%20evolução." target="_blank" 
+                               class="w-full flex items-center justify-center gap-2 bg-white hover:bg-gray-200 text-black font-bold py-3 px-4 rounded-lg text-sm transition relative z-10">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 7.152c-2.482 0-4.5 2.018-4.5 4.5s2.018 4.5 4.5 4.5 4.5-2.018 4.5-4.5-2.018-4.5-4.5-4.5zm0 7.5c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm7.042-8.384l-1.323-1.323a1.5 1.5 0 00-2.121 0l-1.748 1.748a7.464 7.464 0 00-3.662-.843 7.465 7.465 0 00-3.663.843L4.79 4.945a1.5 1.5 0 00-2.122 0L1.346 6.268a1.5 1.5 0 000 2.121l1.748 1.748A7.465 7.465 0 002.25 13.8a7.465 7.465 0 00.844 3.663l-1.748 1.748a1.5 1.5 0 000 2.122l1.323 1.322a1.5 1.5 0 002.121 0l1.748-1.748a7.464 7.464 0 003.662.843 7.465 7.465 0 003.663-.843l1.748 1.748a1.5 1.5 0 002.122 0l1.322-1.322a1.5 1.5 0 000-2.122l-1.748-1.748a7.465 7.465 0 00.843-3.663 7.464 7.464 0 00-.843-3.662l1.748-1.748a1.5 1.5 0 000-2.121z"/></svg>
+                                Entregar a conta ao Sindicato FC (Treino Automático)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- LABORATÓRIO MATEMÁTICO -->
-    <section id="calculadora" class="py-14 px-4 max-w-5xl mx-auto border-b border-zinc-900">
-        <div class="text-center mb-8">
-            <span class="text-xs font-bold uppercase tracking-widest text-gold">Matriz Oficial de Cálculo</span>
-            <h2 class="text-2xl md:text-3xl font-black mt-1 mb-2">🧮 Módulo de <span class="text-crimson">Engenharia</span></h2>
-            <p class="text-zinc-400 text-sm max-w-xl mx-auto">
-                Baseado na alavancagem de atributos cinzentos a 1% para quebra da média.
-            </p>
-        </div>
+    <!-- SEÇÃO DE SERVIÇOS (A LOJA) -->
+    <section id="servicos" class="px-4 pb-24">
+        <div class="max-w-6xl mx-auto border-t border-slate-800 pt-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold mb-4">Balcão de <span class="text-primary">Serviços F2P</span></h2>
+                <p class="text-slate-400 text-sm max-w-2xl mx-auto">Não jogue pelas regras do sistema. Compre contas estruturadas, farme maletas no automático ou agende a guilhotina do Dia 28 com a nossa prancheta.</p>
+            </div>
 
-        <div class="flex flex-wrap justify-center gap-2 mb-6">
-            <button onclick="switchTab('regra180')" id="tab-regra180" class="bg-crimson text-white font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl transition">
-                1. Falha da Média (180%)
-            </button>
-            <button onclick="switchTab('maletas')" id="tab-maletas" class="bg-card border border-zinc-800 text-zinc-400 hover:text-white font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl transition">
-                2. Explosão de Maletas
-            </button>
-            <button onclick="switchTab('avatar')" id="tab-avatar" class="bg-card border
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- SERVIÇO 1 -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col border-t-4 border-t-slate-600 hover:border-t-primary transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Conta Estrutura Mutante</h3>
+                    <p class="text-3xl font-black text-white mb-6">R$ 290<span class="text-sm text-slate-500 font-medium">/único</span></p>
+                    <ul class="space-y-3 text-sm text-slate-400 mb-8 flex-1">
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> +8.000 Maletas Verdes Injetadas</li>
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Plantel limpo (Cones a 1%)</li>
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Emparelhamento de Divisão Fácil</li>
+                    </ul>
+                    <a href="https://wa.me/5500000000000?text=Quero%20comprar%20uma%20Conta%20Estrutura%20Mutante" class="w-full bg-panel hover:bg-slate-700 text-white border border-slate-600 font-bold py-3 rounded-lg text-sm text-center transition">Adquirir Conta</a>
+                </div>
+
+                <!-- SERVIÇO 2 (DESTAQUE) -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col neon-border relative transform md:-translate-y-4">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-background text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Mais Contratado</div>
+                    <h3 class="text-xl font-bold mb-2">Fazenda de Coleta (Farm)</h3>
+                    <p class="text-3xl font-black text-white mb-6">R$ 50<span class="text-sm text-slate-500 font-medium">/mês</span></p>
+                    <ul class="space-y-3 text-sm text-slate-400 mb-8 flex-1">
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Automação total diária de anúncios</li>
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> +25 Maletas Verdes garantidas/dia</li>
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Zero penalização F2P ou subida de GRL</li>
+                    </ul>
+                    <a href="https://wa.me/5500000000000?text=Quero%20assinar%20a%20Fazenda%20de%20Coleta" class="w-full bg-primary hover:bg-primary_hover text-background font-bold py-3 rounded-lg text-sm text-center transition">Assinar Automação</a>
+                </div>
+
+                <!-- SERVIÇO 3 -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col border-t-4 border-t-slate-600 hover:border-t-accent transition duration-300">
+                    <h3 class="text-xl font-bold mb-2">Auditoria do Dia 28</h3>
+                    <p class="text-3xl font-black text-white mb-6">R$ 80<span class="text-sm text-slate-500 font-medium">/sessão</span></p>
+                    <ul class="space-y-3 text-sm text-slate-400 mb-8 flex-1">
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Guilhotina no plantel mediano (70-90%)</li>
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fechar o Top 14 para o Sorteio</li>
+                        <li class="flex gap-2"><svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Avaliação de Fast Trainers via Teste Avatar</li>
+                    </ul>
+                    <a href="https://wa.me/5500000000000?text=Quero%20agendar%20a%20Auditoria%20do%20Dia%2028" class="w-full bg-panel hover:bg-slate-700 text-white border border-slate-600 font-bold py-3 rounded-lg text-sm text-center transition">Agendar Sessão</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-background py-8 text-center text-slate-500 text-xs mt-auto">
+        <p class="font-bold text-slate-400 mb-1">Laboratório F2P Sindicato FC</p>
+        <p>Motor de cálculo reverso otimizado. Baseado nas mecânicas F2P reais do Top Eleven.</p>
+    </footer>
+
+    <!-- LÓGICA REVERSA (RATINHOS ENGINE) -->
+    <script>
+        // Base de dados de treinos (Extraída da lógica de cálculo de média do jogo)
+        const drills = {
+            "1": { name: "Passe, vá e dispare", attrs: ["Velocidade (B)", "Passe (B)", "Chute (B)"], baseWhite: true },
+            "2": { name: "Marcar Homem a Homem", attrs: ["Corte (B)", "Drible (C)", "Finalização (C)"], baseWhite: false },
+            "3": { name: "Jogada na ponta", attrs: ["Cabeçada (C)", "Cruzamento (C)", "Chute (B)", "Finalização (B)"], baseWhite: false },
+            "4": { name: "Parar o atacante", attrs: ["Força (B)", "Corte (B)", "Marcação (B)", "Coragem (B)", "Drible (C)"], baseWhite: false },
+            "5": { name: "Academia", attrs: ["Condicionamento (B)", "Força (B)"], baseWhite: true }
+        };
+
+        function loadDrillInputs() {
+            const drillId = document.getElementById('drillSelect').value;
+            const drill = drills[drillId];
+            const container = document.getElementById('drillInputs');
+            container.innerHTML = '';
+
+            drill.attrs.forEach((attr, index) => {
+                const isWhite = attr.includes('(B)');
+                const defaultVal = isWhite ? 120 : 20;
+                const labelColor = isWhite ? 'text-primary' : 'text-slate-500';
+                const tagColor = isWhite ? 'bg-primary/10 text-primary border-primary/20' : 'bg-slate-800 text-slate-400 border-slate-700';
+                
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between gap-4 p-2 rounded bg-background/50 border border-slate-800/50";
+                div.innerHTML = `
+                    <div class="flex flex-col">
+                        <span class="text-xs font-bold ${labelColor}">${attr.replace(' (B)','').replace(' (C)','')}</span>
+                        <span class="text-[9px] px-1.5 py-0.5 rounded border ${tagColor} w-max mt-1">${isWhite ? 'BRANCO 1.8x' : 'CINZA 1.0x'}</span>
+                    </div>
+                    <div class="relative w-24">
+                        <input type="number" id="attr_${index}" value="${defaultVal}" oninput="calculateEngine()" data-iswhite="${isWhite}"
+                               class="drill-attr w-full bg-panel border border-slate-600 rounded p-2 text-right font-mono text-sm text-white focus:border-primary focus:outline-none">
+                        <span class="absolute right-2 top-2 text-xs text-slate-500 pointer-events-none">%</span>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+            calculateEngine();
+        }
+
+        function simulateMutant() {
+            const inputs = document.querySelectorAll('.drill-attr');
+            inputs.forEach(input => {
+                // Se é branco joga para 240%, se é cinza joga para 1%
+                input.value = input.dataset.iswhite === 'true' ? 240 : 1;
+            });
+            calculateEngine();
+        }
+
+        function calculateEngine() {
+            const inputs = document.querySelectorAll('.drill-attr');
+            let sum = 0;
+            inputs.forEach(input => {
+                sum += parseFloat(input.value) || 0;
+            });
+            
+            const average = sum / inputs.length;
+            const margin = Math.max(0, 180 - average);
+            
+            // Atualiza UI
+            const avgDisplay = document.getElementById('avgDisplay');
+            const avgStatus = document.getElementById('avgStatus');
+            const marginDisplay = document.getElementById('marginDisplay');
+            const progressBar = document.getElementById('progressBar');
+
+            avgDisplay.innerText = average.toFixed(1);
+            marginDisplay.innerText = margin.toFixed(1);
+            
+            // Animação da Barra
+            const percent = Math.min(100, (average / 180) * 100);
+            progressBar.style.width = `${percent}%`;
+
+            if(average >= 180) {
+                avgDisplay.className = "font-mono text-3xl font-black text-danger";
+                progressBar.className = "h-full bg-danger transition-all duration-500";
+                avgStatus.innerText = "TREINO BLOQUEADO (Ganho +1)";
+                avgStatus.className = "text-[10px] font-bold text-danger mt-2 block";
+                marginDisplay.innerText = "0.0";
+            } else {
+                avgDisplay.className = "font-mono text-3xl font-black text-white";
+                progressBar.className = "h-full bg-primary transition-all duration-500";
+                avgStatus.innerText = "XP MÁXIMO LIBERADO";
+                avgStatus.className = "text-[10px] font-bold text-primary mt-2 block";
+            }
+        }
+
+        // Init
+        loadDrillInputs();
+    </script>
+</body>
+</html>
