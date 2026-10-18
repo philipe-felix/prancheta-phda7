@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sindicato FC - Laboratório</title>
-    
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Laboratório do PHDA7 - Sindicato FC</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
-
     <style>
-        /* DESIGN SYSTEM - TOKENS */
         :root {
             color-scheme: dark;
             --sf-bg: #13131F;
@@ -21,163 +15,161 @@
             --sf-accent-hover: #D93652;
             --sf-success: #4ECCA3;
             --sf-error: #FF4D4D;
+            --sf-gold: #F6C90E;
             --sf-text: #FFFFFF;
             --sf-muted: #A2A8D3;
             --sf-border: #2A2A40;
-            
             --sf-radius-sm: 8px;
             --sf-radius-md: 12px;
-            
-            --sf-shadow-card: 0 12px 32px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .025);
-            --sf-glow-accent: 0 0 0 2px rgba(233, 69, 96, .25), 0 0 15px rgba(233, 69, 96, .15);
-            --sf-glow-success: 0 0 24px rgba(78, 204, 163, .12);
-            
-            --sf-font-body: "Inter", system-ui, sans-serif;
-            --sf-font-numeric: "Roboto Mono", "SFMono-Regular", Consolas, monospace;
+            --sf-shadow-card: 0 12px 32px rgba(0, 0, 0, .22);
+            --sf-font-body: "Inter", sans-serif;
+            --sf-font-numeric: "Roboto Mono", monospace;
         }
 
-        /* ESTRUTURA GLOBAL */
-        body {
-            font-family: var(--sf-font-body);
-            background-color: var(--sf-bg);
-            color: var(--sf-text);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .card {
-            background-color: var(--sf-surface);
-            padding: 32px 24px;
-            border-radius: var(--sf-radius-md);
-            box-shadow: var(--sf-shadow-card);
-            width: 100%;
-            max-width: 420px;
-            border: 1px solid var(--sf-border);
-        }
-
-        .header { text-align: center; margin-bottom: 32px; }
-        .tagline { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--sf-muted); font-weight: 700; margin-bottom: 8px; display: block; }
-        h1 { font-size: 28px; font-weight: 800; margin: 0; color: var(--sf-text); }
-
-        /* INPUTS E BOTÕES */
-        .input-group { margin-bottom: 20px; }
-        label { display: block; font-size: 12px; font-weight: 700; color: var(--sf-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        body { font-family: var(--sf-font-body); background: var(--sf-bg); color: var(--sf-text); margin: 0; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
         
-        input[type="number"] {
-            width: 100%;
-            background-color: var(--sf-bg);
-            border: 1px solid var(--sf-border);
-            color: var(--sf-text);
-            font-family: var(--sf-font-numeric);
-            font-size: 16px;
-            padding: 14px 16px;
-            border-radius: var(--sf-radius-sm);
-            box-sizing: border-box;
-            transition: all 0.2s ease;
-            outline: none;
-        }
-        input[type="number"]:focus { border-color: var(--sf-accent); box-shadow: var(--sf-glow-accent); }
+        /* HEADER */
+        .header-main { text-align: center; }
+        .header-main h1 { font-size: 36px; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 1px; color: var(--sf-text); }
+        .header-main span { color: var(--sf-accent); font-family: var(--sf-font-numeric); }
+        .header-main p { color: var(--sf-muted); font-size: 14px; font-weight: 500; margin-top: 8px; text-transform: uppercase; letter-spacing: 2px;}
 
-        button {
-            width: 100%;
-            background-color: var(--sf-accent);
-            color: var(--sf-text);
-            font-family: var(--sf-font-body);
-            font-weight: 750;
-            font-size: 16px;
-            padding: 16px;
-            border: none;
-            border-radius: var(--sf-radius-sm);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 12px;
-        }
-        button:hover { background-color: var(--sf-accent-hover); }
-        button:disabled { background-color: var(--sf-surface-raised); color: var(--sf-muted); cursor: not-allowed; }
+        /* DIVISORES DE SEÇÃO */
+        .section-header { width: 100%; max-width: 1000px; border-bottom: 2px solid var(--sf-border); padding-bottom: 10px; margin-bottom: 20px; }
+        .section-header h2 { font-size: 20px; color: var(--sf-text); margin: 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        .section-header h2::before { content: ""; display: block; width: 12px; height: 12px; background: var(--sf-accent); border-radius: 2px; }
+        .section-header.comercial h2::before { background: var(--sf-gold); }
+
+        .grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; max-width: 1000px; }
+
+        /* CARDS */
+        .card { background: var(--sf-surface); padding: 32px 24px; border-radius: var(--sf-radius-md); box-shadow: var(--sf-shadow-card); width: 100%; max-width: 380px; border: 1px solid var(--sf-border); display: flex; flex-direction: column; }
+        .card.premium { border: 1px solid rgba(246, 201, 14, 0.3); }
+        
+        .card-title { font-size: 16px; font-weight: 700; color: var(--sf-muted); margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid var(--sf-border); padding-bottom: 10px; }
+        .card.premium .card-title { color: var(--sf-gold); border-bottom-color: rgba(246, 201, 14, 0.3); }
+
+        .card-desc { font-size: 13px; color: var(--sf-muted); margin-bottom: 20px; line-height: 1.5; }
+
+        /* INPUTS */
+        .input-group { margin-bottom: 15px; width: 100%; }
+        label { display: block; font-size: 11px; font-weight: 700; color: var(--sf-muted); margin-bottom: 6px; text-transform: uppercase; }
+        input[type="number"] { width: 100%; background: var(--sf-bg); border: 1px solid var(--sf-border); color: var(--sf-text); font-family: var(--sf-font-numeric); font-size: 16px; padding: 12px; border-radius: var(--sf-radius-sm); box-sizing: border-box; outline: none; transition: border 0.2s; }
+        input[type="number"]:focus { border-color: var(--sf-accent); }
+
+        /* BOTÕES */
+        button, .btn-link { width: 100%; background: var(--sf-accent); color: var(--sf-text); font-weight: 700; font-size: 14px; padding: 14px; border: none; border-radius: var(--sf-radius-sm); cursor: pointer; text-transform: uppercase; margin-top: auto; transition: background 0.2s; text-align: center; text-decoration: none; box-sizing: border-box; display: inline-block; }
+        button:hover, .btn-link:hover { background: var(--sf-accent-hover); }
+        
+        .btn-gold { background: var(--sf-gold); color: #000; }
+        .btn-gold:hover { background: #e0b600; }
 
         /* RESULTADOS */
-        #resultado-container {
-            display: none;
-            margin-top: 24px;
-            padding: 20px;
-            background-color: var(--sf-surface-raised);
-            border-radius: var(--sf-radius-sm);
-            text-align: center;
-            border: 1px solid var(--sf-border);
-        }
-        .resultado-sucesso { border-color: rgba(78, 204, 163, 0.3) !important; box-shadow: var(--sf-glow-success); }
-        .resultado-sucesso .destaque-numero { color: var(--sf-success); }
-        .resultado-erro { border-color: rgba(255, 77, 77, 0.3) !important; }
-        .resultado-erro .destaque-numero { color: var(--sf-error); font-family: var(--sf-font-body); font-size: 14px; }
-        
-        .status-label { font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--sf-muted); margin-bottom: 8px; display: block; }
-        .destaque-numero { font-family: var(--sf-font-numeric); font-size: 32px; font-weight: 800; margin: 0; }
+        .resultado-box { display: none; margin-top: 20px; padding: 15px; background: var(--sf-surface-raised); border-radius: var(--sf-radius-sm); text-align: center; border: 1px solid var(--sf-border); }
+        .resultado-sucesso { border-color: rgba(78, 204, 163, 0.4); color: var(--sf-success); font-family: var(--sf-font-numeric); font-size: 20px; font-weight: bold;}
+        .resultado-erro { border-color: rgba(255, 77, 77, 0.4); color: var(--sf-error); font-family: var(--sf-font-numeric); font-size: 15px; font-weight: bold;}
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="header">
-            <span class="tagline">Laboratório F2P</span>
-            <h1 id="app-title">Carregando...</h1>
-        </div>
-        
-        <div class="input-group">
-            <label id="lbl-current">GRL Atual (%)</label>
-            <input type="number" id="current_ovr" placeholder="Ex: 40">
+    <div class="header-main">
+        <h1>Laboratório do <span>PHDA7</span></h1>
+        <p>Simulador Oficial - Sindicato FC</p>
+    </div>
+
+    <!-- SEÇÃO 1: ENGENHARIA MATEMÁTICA -->
+    <div class="section-header">
+        <h2>Engenharia de Mutantes</h2>
+    </div>
+
+    <div class="grid-container">
+        <!-- MÓDULO 1: CALCULADORA -->
+        <div class="card">
+            <div class="card-title">Explosão de GRL (Maletas)</div>
+            <div class="input-group">
+                <label>GRL Atual (%)</label>
+                <input type="number" id="current_ovr" placeholder="Ex: 40">
+            </div>
+            <div class="input-group">
+                <label>GRL Desejado (%)</label>
+                <input type="number" id="target_ovr" placeholder="Ex: 180">
+            </div>
+            <button onclick="calcularMaletas()" id="btn-calc">Calcular Consumo</button>
+            <div id="res-maletas" class="resultado-box"></div>
         </div>
 
-        <div class="input-group">
-            <label id="lbl-target">GRL Desejado (%)</label>
-            <input type="number" id="target_ovr" placeholder="Ex: 178">
+        <!-- MÓDULO 2: FAST TRAINER -->
+        <div class="card">
+            <div class="card-title">Teste Avatar (Fast Trainer)</div>
+            <div class="input-group">
+                <label>Idade do Jogador</label>
+                <input type="number" id="idade_ft" value="18" disabled>
+            </div>
+            <div class="input-group">
+                <label>Ganhos (6 treinos M. Difícil)</label>
+                <input type="number" id="ganho_ft" placeholder="Ex: 45">
+            </div>
+            <button onclick="avaliarMutante()">Avaliar Potencial</button>
+            <div id="res-ft" class="resultado-box"></div>
         </div>
 
-        <button id="btn-calc" onclick="calcular()">Calcular Evolução</button>
+        <!-- MÓDULO 3: MÉDIA 180% -->
+        <div class="card">
+            <div class="card-title">Falha da Média (180%)</div>
+            <div class="input-group">
+                <label>Atributo Branco Chave (%)</label>
+                <input type="number" id="attr_branco" placeholder="Ex: 175">
+            </div>
+            <div class="input-group">
+                <label>Atributo Cinza Secundário (%)</label>
+                <input type="number" id="attr_cinza" placeholder="Ex: 1">
+            </div>
+            <button onclick="calcularMedia()">Simular Exercício</button>
+            <div id="res-media" class="resultado-box"></div>
+        </div>
+    </div>
 
-        <div id="resultado-container">
-            <span class="status-label" id="status-text">Simulação Concluída</span>
-            <p class="destaque-numero" id="resultado-valor"></p>
+    <!-- SEÇÃO 2: SERVIÇOS E COMERCIAL -->
+    <div class="section-header comercial" style="margin-top: 40px;">
+        <h2>Serviços Comerciais</h2>
+    </div>
+
+    <div class="grid-container">
+        <!-- SERVIÇO: COLETA DE MALETAS -->
+        <div class="card premium">
+            <div class="card-title">Fazenda de Coleta (Farm)</div>
+            <p class="card-desc">Sem tempo para farmar? Nós assumimos. Operamos a recolha diária das maletas verdes gratuitas na sua conta para preparar a sua próxima Idade de Ouro.</p>
+            <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 25px; padding-left: 20px;">
+                <li>Coleta otimizada diária</li>
+                <li>Sem penalizações F2P</li>
+                <li>Segurança total de conta</li>
+            </ul>
+            <a href="https://wa.me/5551900000000?text=Olá, tenho interesse no serviço de Coleta de Maletas." target="_blank" class="btn-link btn-gold">Contratar Coleta</a>
+        </div>
+
+        <!-- SERVIÇO: COMPRA DE CONTAS -->
+        <div class="card premium">
+            <div class="card-title">Contas Mutantes (Em Breve)</div>
+            <p class="card-desc">Planejamento a longo prazo feito por nós. Adquira contas secundárias projetadas cirurgicamente, já com milhares de maletas acumuladas e base de jogadores de 1%.</p>
+            <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 25px; padding-left: 20px;">
+                <li>10k+ Maletas Verdes em caixa</li>
+                <li>Cones (1%) já formatados</li>
+                <li>Pronto para a Divisão Suprema</li>
+            </ul>
+            <a href="https://wa.me/5551900000000?text=Olá, quero entrar na fila de espera para as Contas Mutantes." target="_blank" class="btn-link btn-gold">Lista de Espera</a>
         </div>
     </div>
 
     <script>
-        // Lógica de Internacionalização
-        async function carregarTextos() {
-            try {
-                const response = await fetch('/api/interface');
-                const data = await response.json();
-                const t = data.textos;
-
-                document.getElementById('app-title').innerText = t.app_title || "Calculadora Sindicato FC";
-                document.getElementById('lbl-current').innerText = t.label_current || "GRL Atual (%)";
-                document.getElementById('lbl-target').innerText = t.label_target || "GRL Desejado (%)";
-                document.getElementById('btn-calc').innerText = t.btn_calc || "Calcular Evolução";
-            } catch (error) {
-                console.error("Erro de conexão. Utilizando PT-BR padrão.");
-                document.getElementById('app-title').innerText = "Calculadora Sindicato FC";
-            }
-        }
-
-        // Lógica de Cálculo de Backend
-        async function calcular() {
+        // API FastAPI
+        async function calcularMaletas() {
             const current = parseFloat(document.getElementById('current_ovr').value);
             const target = parseFloat(document.getElementById('target_ovr').value);
+            const resBox = document.getElementById('res-maletas');
             const btn = document.getElementById('btn-calc');
-            const resultContainer = document.getElementById('resultado-container');
-            const resultValor = document.getElementById('resultado-valor');
-            const statusText = document.getElementById('status-text');
 
             if (isNaN(current) || isNaN(target)) return;
-
-            btn.disabled = true;
-            btn.innerText = "Processando...";
-            resultContainer.style.display = "none";
-            resultContainer.className = "";
+            btn.disabled = true; btn.innerText = "Processando..."; resBox.style.display = "none";
 
             try {
                 const response = await fetch('/api/calcular', {
@@ -186,30 +178,55 @@
                     body: JSON.stringify({ current_ovr: current, target_ovr: target })
                 });
                 
+                if (!response.ok) throw new Error("Erro de HTTP");
                 const data = await response.json();
-                resultContainer.style.display = "block";
-
-                if (data.erro) {
-                    resultContainer.classList.add('resultado-erro');
-                    statusText.innerText = "Alerta";
-                    resultValor.innerText = data.erro;
-                } else {
-                    resultContainer.classList.add('resultado-sucesso');
-                    statusText.innerText = "Evolução Necessária";
-                    resultValor.innerText = `+${data.maletas} Maletas`;
-                }
+                
+                resBox.style.display = "block";
+                resBox.className = "resultado-box " + (data.erro ? "resultado-erro" : "resultado-sucesso");
+                resBox.innerText = data.erro ? data.erro : `+${data.maletas} Maletas`;
             } catch (error) {
-                resultContainer.style.display = "block";
-                resultContainer.classList.add('resultado-erro');
-                statusText.innerText = "Erro de Conexão";
-                resultValor.innerText = "Falha no servidor.";
+                resBox.style.display = "block";
+                resBox.className = "resultado-box resultado-erro";
+                resBox.innerText = "Erro no servidor.";
             } finally {
-                btn.disabled = false;
-                btn.innerText = document.getElementById('app-title').innerText.includes("Calculator") ? "Calculate Growth" : "Calcular Evolução";
+                btn.disabled = false; btn.innerText = "Calcular Consumo";
             }
         }
 
-        window.onload = carregarTextos;
+        // Fast Trainer
+        function avaliarMutante() {
+            const ganho = parseInt(document.getElementById('ganho_ft').value);
+            const resBox = document.getElementById('res-ft');
+            if (isNaN(ganho)) return;
+
+            resBox.style.display = "block";
+            if (ganho >= 45) {
+                resBox.className = "resultado-box resultado-sucesso";
+                resBox.innerText = "MUTANTE APROVADO!\n(Congelar até aos 21)";
+            } else {
+                resBox.className = "resultado-box resultado-erro";
+                resBox.innerText = "MEDIANO.\nVenda Imediata!";
+            }
+        }
+
+        // Média 180%
+        function calcularMedia() {
+            const branco = parseFloat(document.getElementById('attr_branco').value);
+            const cinza = parseFloat(document.getElementById('attr_cinza').value);
+            const resBox = document.getElementById('res-media');
+            if (isNaN(branco) || isNaN(cinza)) return;
+
+            const media = (branco + cinza) / 2;
+            resBox.style.display = "block";
+            
+            if (media < 180) {
+                resBox.className = "resultado-box resultado-sucesso";
+                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Evolução Liberada)`;
+            } else {
+                resBox.className = "resultado-box resultado-erro";
+                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Bloqueio Atingido)`;
+            }
+        }
     </script>
 </body>
 </html>
