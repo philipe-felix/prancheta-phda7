@@ -3,165 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratório do PHDA7 - Sindicato FC</title>
+    <title>Laboratório PHDA7 | Sindicato FC</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             color-scheme: dark;
-            --sf-bg: #13131F;
-            --sf-surface: #1C1C2D;
-            --sf-surface-raised: #222238;
+            --sf-bg: #0B0B14;
+            --sf-surface: #161625;
+            --sf-surface-raised: #1C1C2D;
             --sf-accent: #E94560;
             --sf-accent-hover: #D93652;
             --sf-success: #4ECCA3;
             --sf-error: #FF4D4D;
             --sf-gold: #F6C90E;
             --sf-text: #FFFFFF;
-            --sf-muted: #A2A8D3;
-            --sf-border: #2A2A40;
+            --sf-muted: #8A91BD;
+            --sf-border: #232336;
             --sf-radius-sm: 8px;
             --sf-radius-md: 12px;
-            --sf-shadow-card: 0 12px 32px rgba(0, 0, 0, .22);
+            --sf-shadow-card: 0 8px 24px rgba(0, 0, 0, .4);
             --sf-font-body: "Inter", sans-serif;
             --sf-font-numeric: "Roboto Mono", monospace;
         }
 
-        body { font-family: var(--sf-font-body); background: var(--sf-bg); color: var(--sf-text); margin: 0; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+        body { font-family: var(--sf-font-body); background: var(--sf-bg); color: var(--sf-text); margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
         
-        /* HEADER */
-        .header-main { text-align: center; }
-        .header-main h1 { font-size: 36px; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 1px; color: var(--sf-text); }
-        .header-main span { color: var(--sf-accent); font-family: var(--sf-font-numeric); }
-        .header-main p { color: var(--sf-muted); font-size: 14px; font-weight: 500; margin-top: 8px; text-transform: uppercase; letter-spacing: 2px;}
+        /* NAVBAR */
+        .navbar { background: var(--sf-surface); border-bottom: 1px solid var(--sf-border); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-size: 20px; font-weight: 800; letter-spacing: 1px; color: var(--sf-text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-logo span { color: var(--sf-accent); }
+        .nav-links a { color: var(--sf-muted); text-decoration: none; margin-left: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--sf-text); }
 
-        /* DIVISORES DE SEÇÃO */
-        .section-header { width: 100%; max-width: 1000px; border-bottom: 2px solid var(--sf-border); padding-bottom: 10px; margin-bottom: 20px; }
-        .section-header h2 { font-size: 20px; color: var(--sf-text); margin: 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
-        .section-header h2::before { content: ""; display: block; width: 12px; height: 12px; background: var(--sf-accent); border-radius: 2px; }
+        /* HERO SECTION */
+        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(180deg, var(--sf-surface) 0%, var(--sf-bg) 100%); border-bottom: 1px solid var(--sf-border); }
+        .hero h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: -1px; }
+        .hero p { color: var(--sf-muted); font-size: 16px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        /* MAIN CONTENT */
+        .container { flex: 1; padding: 50px 20px; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+        
+        /* SECTIONS */
+        .section-header { margin-bottom: 30px; border-bottom: 1px solid var(--sf-border); padding-bottom: 15px; }
+        .section-header h2 { font-size: 22px; margin: 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; display: flex; align-items: center; gap: 12px; }
+        .section-header h2::before { content: ""; display: block; width: 6px; height: 24px; background: var(--sf-accent); border-radius: 2px; }
         .section-header.comercial h2::before { background: var(--sf-gold); }
 
-        .grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; max-width: 1000px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
 
         /* CARDS */
-        .card { background: var(--sf-surface); padding: 32px 24px; border-radius: var(--sf-radius-md); box-shadow: var(--sf-shadow-card); width: 100%; max-width: 380px; border: 1px solid var(--sf-border); display: flex; flex-direction: column; }
-        .card.premium { border: 1px solid rgba(246, 201, 14, 0.3); }
+        .card { background: var(--sf-surface-raised); padding: 30px; border-radius: var(--sf-radius-md); box-shadow: var(--sf-shadow-card); border: 1px solid var(--sf-border); display: flex; flex-direction: column; }
+        .card.premium { border: 1px solid rgba(246, 201, 14, 0.2); background: linear-gradient(180deg, rgba(246,201,14,0.03) 0%, var(--sf-surface-raised) 100%); }
         
-        .card-title { font-size: 16px; font-weight: 700; color: var(--sf-muted); margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid var(--sf-border); padding-bottom: 10px; }
-        .card.premium .card-title { color: var(--sf-gold); border-bottom-color: rgba(246, 201, 14, 0.3); }
-
-        .card-desc { font-size: 13px; color: var(--sf-muted); margin-bottom: 20px; line-height: 1.5; }
+        .card-title { font-size: 16px; font-weight: 800; color: var(--sf-text); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card.premium .card-title { color: var(--sf-gold); }
+        .card-desc { font-size: 13px; color: var(--sf-muted); margin-bottom: 25px; line-height: 1.6; }
 
         /* INPUTS */
-        .input-group { margin-bottom: 15px; width: 100%; }
-        label { display: block; font-size: 11px; font-weight: 700; color: var(--sf-muted); margin-bottom: 6px; text-transform: uppercase; }
-        input[type="number"] { width: 100%; background: var(--sf-bg); border: 1px solid var(--sf-border); color: var(--sf-text); font-family: var(--sf-font-numeric); font-size: 16px; padding: 12px; border-radius: var(--sf-radius-sm); box-sizing: border-box; outline: none; transition: border 0.2s; }
+        .input-group { margin-bottom: 18px; width: 100%; }
+        label { display: block; font-size: 11px; font-weight: 700; color: var(--sf-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        input[type="number"] { width: 100%; background: var(--sf-bg); border: 1px solid var(--sf-border); color: var(--sf-text); font-family: var(--sf-font-numeric); font-size: 16px; padding: 14px; border-radius: var(--sf-radius-sm); box-sizing: border-box; outline: none; transition: border 0.2s; }
         input[type="number"]:focus { border-color: var(--sf-accent); }
+        input[type="number"]:disabled { opacity: 0.5; cursor: not-allowed; }
 
         /* BOTÕES */
-        button, .btn-link { width: 100%; background: var(--sf-accent); color: var(--sf-text); font-weight: 700; font-size: 14px; padding: 14px; border: none; border-radius: var(--sf-radius-sm); cursor: pointer; text-transform: uppercase; margin-top: auto; transition: background 0.2s; text-align: center; text-decoration: none; box-sizing: border-box; display: inline-block; }
+        button, .btn-link { width: 100%; background: var(--sf-accent); color: var(--sf-text); font-weight: 700; font-size: 14px; padding: 16px; border: none; border-radius: var(--sf-radius-sm); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; margin-top: auto; transition: background 0.2s; text-align: center; text-decoration: none; box-sizing: border-box; display: inline-block; }
         button:hover, .btn-link:hover { background: var(--sf-accent-hover); }
         
         .btn-gold { background: var(--sf-gold); color: #000; }
         .btn-gold:hover { background: #e0b600; }
 
         /* RESULTADOS */
-        .resultado-box { display: none; margin-top: 20px; padding: 15px; background: var(--sf-surface-raised); border-radius: var(--sf-radius-sm); text-align: center; border: 1px solid var(--sf-border); }
+        .resultado-box { display: none; margin-top: 20px; padding: 16px; background: var(--sf-bg); border-radius: var(--sf-radius-sm); text-align: center; border: 1px solid var(--sf-border); }
         .resultado-sucesso { border-color: rgba(78, 204, 163, 0.4); color: var(--sf-success); font-family: var(--sf-font-numeric); font-size: 20px; font-weight: bold;}
-        .resultado-erro { border-color: rgba(255, 77, 77, 0.4); color: var(--sf-error); font-family: var(--sf-font-numeric); font-size: 15px; font-weight: bold;}
+        .resultado-erro { border-color: rgba(255, 77, 77, 0.4); color: var(--sf-error); font-family: var(--sf-font-numeric); font-size: 14px; font-weight: bold;}
+        
+        /* FOOTER */
+        .footer { background: var(--sf-surface); border-top: 1px solid var(--sf-border); padding: 30px 20px; text-align: center; margin-top: auto; }
+        .footer p { color: var(--sf-muted); font-size: 12px; margin: 0; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 32px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header-main">
-        <h1>Laboratório do <span>PHDA7</span></h1>
-        <p>Simulador Oficial - Sindicato FC</p>
-    </div>
-
-    <!-- SEÇÃO 1: ENGENHARIA MATEMÁTICA -->
-    <div class="section-header">
-        <h2>Engenharia de Mutantes</h2>
-    </div>
-
-    <div class="grid-container">
-        <!-- MÓDULO 1: CALCULADORA -->
-        <div class="card">
-            <div class="card-title">Explosão de GRL (Maletas)</div>
-            <div class="input-group">
-                <label>GRL Atual (%)</label>
-                <input type="number" id="current_ovr" placeholder="Ex: 40">
-            </div>
-            <div class="input-group">
-                <label>GRL Desejado (%)</label>
-                <input type="number" id="target_ovr" placeholder="Ex: 180">
-            </div>
-            <button onclick="calcularMaletas()" id="btn-calc">Calcular Consumo</button>
-            <div id="res-maletas" class="resultado-box"></div>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sf-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            LAB <span>PHDA7</span>
+        </a>
+        <div class="nav-links">
+            <a href="#engenharia">Engenharia F2P</a>
+            <a href="#comercial">Serviços</a>
         </div>
+    </nav>
 
-        <!-- MÓDULO 2: FAST TRAINER -->
-        <div class="card">
-            <div class="card-title">Teste Avatar (Fast Trainer)</div>
-            <div class="input-group">
-                <label>Idade do Jogador</label>
-                <input type="number" id="idade_ft" value="18" disabled>
+    <!-- CABEÇALHO IMERSIVO -->
+    <header class="hero">
+        <h1>Simulador Oficial Sindicato FC</h1>
+        <p>A ferramenta definitiva para gestão avançada Free-to-Play. Calcule o consumo exato da Idade de Ouro, valide Fast Trainers e manipule o algoritmo da média de exercícios. Sem margem para erros.</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- SEÇÃO: ENGENHARIA MATEMÁTICA -->
+        <section id="engenharia">
+            <div class="section-header">
+                <h2>Engenharia de Mutantes</h2>
             </div>
-            <div class="input-group">
-                <label>Ganhos (6 treinos M. Difícil)</label>
-                <input type="number" id="ganho_ft" placeholder="Ex: 45">
+
+            <div class="grid-container">
+                <!-- CALCULADORA DE MALETAS -->
+                <div class="card">
+                    <div class="card-title">1. Explosão de GRL (Maletas)</div>
+                    <div class="input-group">
+                        <label>GRL Atual (%)</label>
+                        <input type="number" id="current_ovr" placeholder="Ex: 40">
+                    </div>
+                    <div class="input-group">
+                        <label>GRL Desejado (%)</label>
+                        <input type="number" id="target_ovr" placeholder="Ex: 180">
+                    </div>
+                    <button onclick="calcularMaletas()" id="btn-calc">Calcular Consumo</button>
+                    <div id="res-maletas" class="resultado-box"></div>
+                </div>
+
+                <!-- FAST TRAINER -->
+                <div class="card">
+                    <div class="card-title">2. Teste Avatar (Avaliação)</div>
+                    <div class="input-group">
+                        <label>Idade do Jogador</label>
+                        <input type="number" id="idade_ft" value="18" disabled>
+                    </div>
+                    <div class="input-group">
+                        <label>Ganhos (6 treinos M. Difícil)</label>
+                        <input type="number" id="ganho_ft" placeholder="Ex: 45">
+                    </div>
+                    <button onclick="avaliarMutante()">Analisar Potencial</button>
+                    <div id="res-ft" class="resultado-box"></div>
+                </div>
+
+                <!-- MÉDIA 180% -->
+                <div class="card">
+                    <div class="card-title">3. Falha da Média (180%)</div>
+                    <div class="input-group">
+                        <label>Atributo Branco Chave (%)</label>
+                        <input type="number" id="attr_branco" placeholder="Ex: 175">
+                    </div>
+                    <div class="input-group">
+                        <label>Atributo Cinza Secundário (%)</label>
+                        <input type="number" id="attr_cinza" placeholder="Ex: 1">
+                    </div>
+                    <button onclick="calcularMedia()">Simular Exercício</button>
+                    <div id="res-media" class="resultado-box"></div>
+                </div>
             </div>
-            <button onclick="avaliarMutante()">Avaliar Potencial</button>
-            <div id="res-ft" class="resultado-box"></div>
-        </div>
+        </section>
 
-        <!-- MÓDULO 3: MÉDIA 180% -->
-        <div class="card">
-            <div class="card-title">Falha da Média (180%)</div>
-            <div class="input-group">
-                <label>Atributo Branco Chave (%)</label>
-                <input type="number" id="attr_branco" placeholder="Ex: 175">
+        <!-- SEÇÃO: COMERCIAL -->
+        <section id="comercial">
+            <div class="section-header comercial">
+                <h2>Serviços Profissionais</h2>
             </div>
-            <div class="input-group">
-                <label>Atributo Cinza Secundário (%)</label>
-                <input type="number" id="attr_cinza" placeholder="Ex: 1">
+
+            <div class="grid-container">
+                <!-- SERVIÇO DE COLETA -->
+                <div class="card premium">
+                    <div class="card-title">Fazenda de Coleta Automática</div>
+                    <p class="card-desc">Sem tempo para o "Teste dos Troféus"? Nós operamos a recolha diária das maletas verdes gratuitas na sua conta, garantindo o stock para a Idade de Ouro.</p>
+                    <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 30px; padding-left: 20px; line-height: 1.6;">
+                        <li>Recolha maximizada diária.</li>
+                        <li>Proteção total contra emparelhamento (não subimos GRL).</li>
+                        <li>Sigilo e segurança de credenciais.</li>
+                    </ul>
+                    <a href="https://wa.me/5551900000000?text=Olá, tenho interesse no serviço de Coleta de Maletas." target="_blank" class="btn-link btn-gold">Contratar Coleta</a>
+                </div>
+
+                <!-- VENDA DE CONTAS -->
+                <div class="card premium">
+                    <div class="card-title">Contas Laboratório (Em Breve)</div>
+                    <p class="card-desc">Planeamento reverso executado por nós. Adquira contas secundárias preparadas para dominar, já com o ciclo de derretimento concluído e recursos acumulados.</p>
+                    <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 30px; padding-left: 20px; line-height: 1.6;">
+                        <li>10k+ Maletas Verdes injetadas.</li>
+                        <li>Plantel limpo (apenas cones de 1% e base mutante).</li>
+                        <li>Pronto para assalto à Divisão Suprema.</li>
+                    </ul>
+                    <a href="https://wa.me/5551900000000?text=Olá, quero entrar na fila de espera para as Contas Mutantes." target="_blank" class="btn-link btn-gold">Lista de Espera</a>
+                </div>
             </div>
-            <button onclick="calcularMedia()">Simular Exercício</button>
-            <div id="res-media" class="resultado-box"></div>
-        </div>
-    </div>
+        </section>
 
-    <!-- SEÇÃO 2: SERVIÇOS E COMERCIAL -->
-    <div class="section-header comercial" style="margin-top: 40px;">
-        <h2>Serviços Comerciais</h2>
-    </div>
+    </main>
 
-    <div class="grid-container">
-        <!-- SERVIÇO: COLETA DE MALETAS -->
-        <div class="card premium">
-            <div class="card-title">Fazenda de Coleta (Farm)</div>
-            <p class="card-desc">Sem tempo para farmar? Nós assumimos. Operamos a recolha diária das maletas verdes gratuitas na sua conta para preparar a sua próxima Idade de Ouro.</p>
-            <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 25px; padding-left: 20px;">
-                <li>Coleta otimizada diária</li>
-                <li>Sem penalizações F2P</li>
-                <li>Segurança total de conta</li>
-            </ul>
-            <a href="https://wa.me/5551900000000?text=Olá, tenho interesse no serviço de Coleta de Maletas." target="_blank" class="btn-link btn-gold">Contratar Coleta</a>
-        </div>
-
-        <!-- SERVIÇO: COMPRA DE CONTAS -->
-        <div class="card premium">
-            <div class="card-title">Contas Mutantes (Em Breve)</div>
-            <p class="card-desc">Planejamento a longo prazo feito por nós. Adquira contas secundárias projetadas cirurgicamente, já com milhares de maletas acumuladas e base de jogadores de 1%.</p>
-            <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 25px; padding-left: 20px;">
-                <li>10k+ Maletas Verdes em caixa</li>
-                <li>Cones (1%) já formatados</li>
-                <li>Pronto para a Divisão Suprema</li>
-            </ul>
-            <a href="https://wa.me/5551900000000?text=Olá, quero entrar na fila de espera para as Contas Mutantes." target="_blank" class="btn-link btn-gold">Lista de Espera</a>
-        </div>
-    </div>
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 Laboratório PHDA7 | Sindicato FC. Todos os direitos reservados. Focado em Engenharia F2P Top Eleven.</p>
+    </footer>
 
     <script>
-        // API FastAPI
+        // API FastAPI - Lógica intacta
         async function calcularMaletas() {
             const current = parseFloat(document.getElementById('current_ovr').value);
             const target = parseFloat(document.getElementById('target_ovr').value);
@@ -169,7 +213,7 @@
             const btn = document.getElementById('btn-calc');
 
             if (isNaN(current) || isNaN(target)) return;
-            btn.disabled = true; btn.innerText = "Processando..."; resBox.style.display = "none";
+            btn.disabled = true; btn.innerText = "Calculando..."; resBox.style.display = "none";
 
             try {
                 const response = await fetch('/api/calcular', {
@@ -183,17 +227,16 @@
                 
                 resBox.style.display = "block";
                 resBox.className = "resultado-box " + (data.erro ? "resultado-erro" : "resultado-sucesso");
-                resBox.innerText = data.erro ? data.erro : `+${data.maletas} Maletas`;
+                resBox.innerText = data.erro ? data.erro : `+${data.maletas} Maletas Estimadas`;
             } catch (error) {
                 resBox.style.display = "block";
                 resBox.className = "resultado-box resultado-erro";
-                resBox.innerText = "Erro no servidor.";
+                resBox.innerText = "Erro na ligação ao servidor API.";
             } finally {
                 btn.disabled = false; btn.innerText = "Calcular Consumo";
             }
         }
 
-        // Fast Trainer
         function avaliarMutante() {
             const ganho = parseInt(document.getElementById('ganho_ft').value);
             const resBox = document.getElementById('res-ft');
@@ -202,14 +245,13 @@
             resBox.style.display = "block";
             if (ganho >= 45) {
                 resBox.className = "resultado-box resultado-sucesso";
-                resBox.innerText = "MUTANTE APROVADO!\n(Congelar até aos 21)";
+                resBox.innerText = "PRODIGY! (Congelar até aos 21)";
             } else {
                 resBox.className = "resultado-box resultado-erro";
-                resBox.innerText = "MEDIANO.\nVenda Imediata!";
+                resBox.innerText = "MEDIANO. Venda no mercado!";
             }
         }
 
-        // Média 180%
         function calcularMedia() {
             const branco = parseFloat(document.getElementById('attr_branco').value);
             const cinza = parseFloat(document.getElementById('attr_cinza').value);
@@ -221,10 +263,10 @@
             
             if (media < 180) {
                 resBox.className = "resultado-box resultado-sucesso";
-                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Evolução Liberada)`;
+                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Abaixo de 180% - Ganho Máximo de XP)`;
             } else {
                 resBox.className = "resultado-box resultado-erro";
-                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Bloqueio Atingido)`;
+                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Bloqueio do Motor Atingido)`;
             }
         }
     </script>
