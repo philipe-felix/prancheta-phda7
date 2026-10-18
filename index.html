@@ -1,274 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratório PHDA7 | Sindicato FC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            color-scheme: dark;
-            --sf-bg: #0B0B14;
-            --sf-surface: #161625;
-            --sf-surface-raised: #1C1C2D;
-            --sf-accent: #E94560;
-            --sf-accent-hover: #D93652;
-            --sf-success: #4ECCA3;
-            --sf-error: #FF4D4D;
-            --sf-gold: #F6C90E;
-            --sf-text: #FFFFFF;
-            --sf-muted: #8A91BD;
-            --sf-border: #232336;
-            --sf-radius-sm: 8px;
-            --sf-radius-md: 12px;
-            --sf-shadow-card: 0 8px 24px rgba(0, 0, 0, .4);
-            --sf-font-body: "Inter", sans-serif;
-            --sf-font-numeric: "Roboto Mono", monospace;
-        }
+    <title>Prancheta do PHDA7 | Laboratório F2P Sindicato FC</title>
 
-        body { font-family: var(--sf-font-body); background: var(--sf-bg); color: var(--sf-text); margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
-        
-        /* NAVBAR */
-        .navbar { background: var(--sf-surface); border-bottom: 1px solid var(--sf-border); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-        .nav-logo { font-size: 20px; font-weight: 800; letter-spacing: 1px; color: var(--sf-text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .nav-logo span { color: var(--sf-accent); }
-        .nav-links a { color: var(--sf-muted); text-decoration: none; margin-left: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--sf-text); }
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#09090b">
 
-        /* HERO SECTION */
-        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(180deg, var(--sf-surface) 0%, var(--sf-bg) 100%); border-bottom: 1px solid var(--sf-border); }
-        .hero h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: -1px; }
-        .hero p { color: var(--sf-muted); font-size: 16px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
-
-        /* MAIN CONTENT */
-        .container { flex: 1; padding: 50px 20px; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; }
-        
-        /* SECTIONS */
-        .section-header { margin-bottom: 30px; border-bottom: 1px solid var(--sf-border); padding-bottom: 15px; }
-        .section-header h2 { font-size: 22px; margin: 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; display: flex; align-items: center; gap: 12px; }
-        .section-header h2::before { content: ""; display: block; width: 6px; height: 24px; background: var(--sf-accent); border-radius: 2px; }
-        .section-header.comercial h2::before { background: var(--sf-gold); }
-
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
-
-        /* CARDS */
-        .card { background: var(--sf-surface-raised); padding: 30px; border-radius: var(--sf-radius-md); box-shadow: var(--sf-shadow-card); border: 1px solid var(--sf-border); display: flex; flex-direction: column; }
-        .card.premium { border: 1px solid rgba(246, 201, 14, 0.2); background: linear-gradient(180deg, rgba(246,201,14,0.03) 0%, var(--sf-surface-raised) 100%); }
-        
-        .card-title { font-size: 16px; font-weight: 800; color: var(--sf-text); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .card.premium .card-title { color: var(--sf-gold); }
-        .card-desc { font-size: 13px; color: var(--sf-muted); margin-bottom: 25px; line-height: 1.6; }
-
-        /* INPUTS */
-        .input-group { margin-bottom: 18px; width: 100%; }
-        label { display: block; font-size: 11px; font-weight: 700; color: var(--sf-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-        input[type="number"] { width: 100%; background: var(--sf-bg); border: 1px solid var(--sf-border); color: var(--sf-text); font-family: var(--sf-font-numeric); font-size: 16px; padding: 14px; border-radius: var(--sf-radius-sm); box-sizing: border-box; outline: none; transition: border 0.2s; }
-        input[type="number"]:focus { border-color: var(--sf-accent); }
-        input[type="number"]:disabled { opacity: 0.5; cursor: not-allowed; }
-
-        /* BOTÕES */
-        button, .btn-link { width: 100%; background: var(--sf-accent); color: var(--sf-text); font-weight: 700; font-size: 14px; padding: 16px; border: none; border-radius: var(--sf-radius-sm); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; margin-top: auto; transition: background 0.2s; text-align: center; text-decoration: none; box-sizing: border-box; display: inline-block; }
-        button:hover, .btn-link:hover { background: var(--sf-accent-hover); }
-        
-        .btn-gold { background: var(--sf-gold); color: #000; }
-        .btn-gold:hover { background: #e0b600; }
-
-        /* RESULTADOS */
-        .resultado-box { display: none; margin-top: 20px; padding: 16px; background: var(--sf-bg); border-radius: var(--sf-radius-sm); text-align: center; border: 1px solid var(--sf-border); }
-        .resultado-sucesso { border-color: rgba(78, 204, 163, 0.4); color: var(--sf-success); font-family: var(--sf-font-numeric); font-size: 20px; font-weight: bold;}
-        .resultado-erro { border-color: rgba(255, 77, 77, 0.4); color: var(--sf-error); font-family: var(--sf-font-numeric); font-size: 14px; font-weight: bold;}
-        
-        /* FOOTER */
-        .footer { background: var(--sf-surface); border-top: 1px solid var(--sf-border); padding: 30px 20px; text-align: center; margin-top: auto; }
-        .footer p { color: var(--sf-muted); font-size: 12px; margin: 0; }
-        
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 32px; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- BARRA DE NAVEGAÇÃO -->
-    <nav class="navbar">
-        <a href="#" class="nav-logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sf-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            LAB <span>PHDA7</span>
-        </a>
-        <div class="nav-links">
-            <a href="#engenharia">Engenharia F2P</a>
-            <a href="#comercial">Serviços</a>
-        </div>
-    </nav>
-
-    <!-- CABEÇALHO IMERSIVO -->
-    <header class="hero">
-        <h1>Simulador Oficial Sindicato FC</h1>
-        <p>A ferramenta definitiva para gestão avançada Free-to-Play. Calcule o consumo exato da Idade de Ouro, valide Fast Trainers e manipule o algoritmo da média de exercícios. Sem margem para erros.</p>
-    </header>
-
-    <main class="container">
-        
-        <!-- SEÇÃO: ENGENHARIA MATEMÁTICA -->
-        <section id="engenharia">
-            <div class="section-header">
-                <h2>Engenharia de Mutantes</h2>
-            </div>
-
-            <div class="grid-container">
-                <!-- CALCULADORA DE MALETAS -->
-                <div class="card">
-                    <div class="card-title">1. Explosão de GRL (Maletas)</div>
-                    <div class="input-group">
-                        <label>GRL Atual (%)</label>
-                        <input type="number" id="current_ovr" placeholder="Ex: 40">
-                    </div>
-                    <div class="input-group">
-                        <label>GRL Desejado (%)</label>
-                        <input type="number" id="target_ovr" placeholder="Ex: 180">
-                    </div>
-                    <button onclick="calcularMaletas()" id="btn-calc">Calcular Consumo</button>
-                    <div id="res-maletas" class="resultado-box"></div>
-                </div>
-
-                <!-- FAST TRAINER -->
-                <div class="card">
-                    <div class="card-title">2. Teste Avatar (Avaliação)</div>
-                    <div class="input-group">
-                        <label>Idade do Jogador</label>
-                        <input type="number" id="idade_ft" value="18" disabled>
-                    </div>
-                    <div class="input-group">
-                        <label>Ganhos (6 treinos M. Difícil)</label>
-                        <input type="number" id="ganho_ft" placeholder="Ex: 45">
-                    </div>
-                    <button onclick="avaliarMutante()">Analisar Potencial</button>
-                    <div id="res-ft" class="resultado-box"></div>
-                </div>
-
-                <!-- MÉDIA 180% -->
-                <div class="card">
-                    <div class="card-title">3. Falha da Média (180%)</div>
-                    <div class="input-group">
-                        <label>Atributo Branco Chave (%)</label>
-                        <input type="number" id="attr_branco" placeholder="Ex: 175">
-                    </div>
-                    <div class="input-group">
-                        <label>Atributo Cinza Secundário (%)</label>
-                        <input type="number" id="attr_cinza" placeholder="Ex: 1">
-                    </div>
-                    <button onclick="calcularMedia()">Simular Exercício</button>
-                    <div id="res-media" class="resultado-box"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO: COMERCIAL -->
-        <section id="comercial">
-            <div class="section-header comercial">
-                <h2>Serviços Profissionais</h2>
-            </div>
-
-            <div class="grid-container">
-                <!-- SERVIÇO DE COLETA -->
-                <div class="card premium">
-                    <div class="card-title">Fazenda de Coleta Automática</div>
-                    <p class="card-desc">Sem tempo para o "Teste dos Troféus"? Nós operamos a recolha diária das maletas verdes gratuitas na sua conta, garantindo o stock para a Idade de Ouro.</p>
-                    <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 30px; padding-left: 20px; line-height: 1.6;">
-                        <li>Recolha maximizada diária.</li>
-                        <li>Proteção total contra emparelhamento (não subimos GRL).</li>
-                        <li>Sigilo e segurança de credenciais.</li>
-                    </ul>
-                    <a href="https://wa.me/5551900000000?text=Olá, tenho interesse no serviço de Coleta de Maletas." target="_blank" class="btn-link btn-gold">Contratar Coleta</a>
-                </div>
-
-                <!-- VENDA DE CONTAS -->
-                <div class="card premium">
-                    <div class="card-title">Contas Laboratório (Em Breve)</div>
-                    <p class="card-desc">Planeamento reverso executado por nós. Adquira contas secundárias preparadas para dominar, já com o ciclo de derretimento concluído e recursos acumulados.</p>
-                    <ul style="color: var(--sf-muted); font-size: 13px; margin-bottom: 30px; padding-left: 20px; line-height: 1.6;">
-                        <li>10k+ Maletas Verdes injetadas.</li>
-                        <li>Plantel limpo (apenas cones de 1% e base mutante).</li>
-                        <li>Pronto para assalto à Divisão Suprema.</li>
-                    </ul>
-                    <a href="https://wa.me/5551900000000?text=Olá, quero entrar na fila de espera para as Contas Mutantes." target="_blank" class="btn-link btn-gold">Lista de Espera</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer class="footer">
-        <p>&copy; 2026 Laboratório PHDA7 | Sindicato FC. Todos os direitos reservados. Focado em Engenharia F2P Top Eleven.</p>
-    </footer>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <script>
-        // API FastAPI - Lógica intacta
-        async function calcularMaletas() {
-            const current = parseFloat(document.getElementById('current_ovr').value);
-            const target = parseFloat(document.getElementById('target_ovr').value);
-            const resBox = document.getElementById('res-maletas');
-            const btn = document.getElementById('btn-calc');
-
-            if (isNaN(current) || isNaN(target)) return;
-            btn.disabled = true; btn.innerText = "Calculando..."; resBox.style.display = "none";
-
-            try {
-                const response = await fetch('/api/calcular', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ current_ovr: current, target_ovr: target })
-                });
-                
-                if (!response.ok) throw new Error("Erro de HTTP");
-                const data = await response.json();
-                
-                resBox.style.display = "block";
-                resBox.className = "resultado-box " + (data.erro ? "resultado-erro" : "resultado-sucesso");
-                resBox.innerText = data.erro ? data.erro : `+${data.maletas} Maletas Estimadas`;
-            } catch (error) {
-                resBox.style.display = "block";
-                resBox.className = "resultado-box resultado-erro";
-                resBox.innerText = "Erro na ligação ao servidor API.";
-            } finally {
-                btn.disabled = false; btn.innerText = "Calcular Consumo";
-            }
-        }
-
-        function avaliarMutante() {
-            const ganho = parseInt(document.getElementById('ganho_ft').value);
-            const resBox = document.getElementById('res-ft');
-            if (isNaN(ganho)) return;
-
-            resBox.style.display = "block";
-            if (ganho >= 45) {
-                resBox.className = "resultado-box resultado-sucesso";
-                resBox.innerText = "PRODIGY! (Congelar até aos 21)";
-            } else {
-                resBox.className = "resultado-box resultado-erro";
-                resBox.innerText = "MEDIANO. Venda no mercado!";
-            }
-        }
-
-        function calcularMedia() {
-            const branco = parseFloat(document.getElementById('attr_branco').value);
-            const cinza = parseFloat(document.getElementById('attr_cinza').value);
-            const resBox = document.getElementById('res-media');
-            if (isNaN(branco) || isNaN(cinza)) return;
-
-            const media = (branco + cinza) / 2;
-            resBox.style.display = "block";
-            
-            if (media < 180) {
-                resBox.className = "resultado-box resultado-sucesso";
-                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Abaixo de 180% - Ganho Máximo de XP)`;
-            } else {
-                resBox.className = "resultado-box resultado-erro";
-                resBox.innerText = `Média: ${media.toFixed(1)}%\n(Bloqueio do Motor Atingido)`;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        carbon: '#09090b',
+                        card: '#141418',
+                        crimson: '#e11d48',
+                        gold: '#f59e0b',
+                    }
+                }
             }
         }
     </script>
-</body>
-</html>
+    <style>
+        body { background-color: #09090b; color: #f4f4f5; }
+        .glow-red { box-shadow: 0 0 25px -5px rgba(225, 29, 72, 0.35); }
+        .glow-gold { box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3); }
+        .gradient-text {
+            background: linear-gradient(90deg, #ef4444 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-crimson selection:text-white">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-carbon/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="favicon.png" alt="Sindicato FC" class="w-10 h-10 rounded-full border border-gold/60 object-cover" onerror="this.src='https://placehold.co/80x80/141418/f59e0b?text=PHDA7'">
+                <div>
+                    <span class="font-black tracking-tight text-white text-lg">PRANCHETA <span class="text-crimson">PHDA7</span></span>
+                    <span class="block text-[10px] uppercase tracking-widest text-gold font-semibold">Laboratório F2P - Sindicato FC</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="#calculadora" class="bg-card border border-gold/50 text-gold hover:bg-gold hover:text-black text-xs font-bold px-3 py-2 rounded-lg transition">
+                    🧬 Engenharia F2P
+                </a>
+                <a href="#contas" class="bg-crimson hover:bg-red-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition">
+                    Serviços
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden py-12 px-4 text-center border-b border-zinc-900">
+        <div class="max-w-3xl mx-auto">
+            <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-xs font-bold px-3 py-1 rounded-full mb-4">
+                ⚡ ENGENHARIA REVERSA NO TOP ELEVEN
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+                A matemática não perdoa.<br>
+                <span class="gradient-text">O Sindicato FC também não.</span>
+            </h1>
+            <p class="text-zinc-400 text-sm md:text-base mb-8 max-w-xl mx-auto">
+                Execute o Ciclo de Derretimento de 3 anos, quebre a Regra dos 180% e atinja 220%+ de GRL sem desperdiçar maletas verdes com o nosso motor de cálculo.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="#calculadora" class="bg-crimson hover:bg-red-700 text-white font-extrabold px-6 py-3.5 rounded-xl transition glow-red">
+                    🧬 Abrir Laboratório Matemático
+                </a>
+                <a href="https://wa.me/5500000000000?text=Fala%20PHDA7!%20Vim%20pelo%20site%20e%20quero%20aplicar%20a%20engenharia%20F2P%20no%20meu%20clube." 
+                   class="bg-emerald-500 hover:bg-emerald-600 text-black font-extrabold px-6 py-3.5 rounded-xl flex items-center justify-center gap-2 transition">
+                    💬 Contactar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LABORATÓRIO MATEMÁTICO -->
+    <section id="calculadora" class="py-14 px-4 max-w-5xl mx-auto border-b border-zinc-900">
+        <div class="text-center mb-8">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold">Matriz Oficial de Cálculo</span>
+            <h2 class="text-2xl md:text-3xl font-black mt-1 mb-2">🧮 Módulo de <span class="text-crimson">Engenharia</span></h2>
+            <p class="text-zinc-400 text-sm max-w-xl mx-auto">
+                Baseado na alavancagem de atributos cinzentos a 1% para quebra da média.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+            <button onclick="switchTab('regra180')" id="tab-regra180" class="bg-crimson text-white font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl transition">
+                1. Falha da Média (180%)
+            </button>
+            <button onclick="switchTab('maletas')" id="tab-maletas" class="bg-card border border-zinc-800 text-zinc-400 hover:text-white font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl transition">
+                2. Explosão de Maletas
+            </button>
+            <button onclick="switchTab('avatar')" id="tab-avatar" class="bg-card border
