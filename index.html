@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prancheta do PHDA7 | Laboratório F2P Sindicato FC</title>
+    <title>Prancheta do PHDA7 | Sindicato FC LAB</title>
 
-    <!-- FAVICON OFICIAL -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
     <meta name="theme-color" content="#09090b">
 
     <!-- Tailwind CSS & Fontes -->
@@ -36,11 +32,8 @@
     </script>
     <style>
         body { background-color: #09090b; color: #f4f4f5; }
-        
-        /* Design System Aprimorado: Efeitos visuais refinados */
         .glass-header { background: rgba(9, 9, 11, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .card-premium { background: #141418; border: 1px solid rgba(255, 255, 255, 0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .card-premium:hover { transform: translateY(-2px); }
+        .card-premium { background: #141418; border: 1px solid rgba(255, 255, 255, 0.05); }
         
         .gradient-text {
             background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);
@@ -48,35 +41,37 @@
             -webkit-text-fill-color: transparent;
         }
         
-        /* Inputs aprimorados */
         input[type="number"], select, input[type="text"] { transition: all 0.2s ease; }
         input[type="number"]:focus, select:focus, input[type="text"]:focus { box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.2); }
         
-        /* Scrollbar limpa */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #09090b; }
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+        /* Estilo da Tabela de Preços */
+        .plan-table th, .plan-table td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .plan-table tr:hover { background-color: rgba(255,255,255,0.02); }
     </style>
 </head>
 <body class="antialiased selection:bg-crimson selection:text-white">
 
     <!-- HEADER / NAVBAR -->
     <header class="sticky top-0 z-50 glass-header">
-        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full border border-gold/60 bg-zinc-900 flex items-center justify-center font-black text-gold shadow-glow-gold">S</div>
                 <div>
                     <span class="font-black tracking-tight text-white text-lg">PRANCHETA <span class="text-crimson">PHDA7</span></span>
-                    <span class="block text-[10px] uppercase tracking-widest text-gold font-semibold">Sindicato FC Lab</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-gold font-semibold">Sindicato FC LAB</span>
                 </div>
             </div>
-            <div class="flex items-center gap-3">
-                <a href="#calculadora" class="hidden sm:inline-block bg-card border border-gold/50 text-gold hover:bg-gold hover:text-black text-xs font-bold px-4 py-2 rounded-lg transition-colors">
-                    🧬 Simulador
-                </a>
-                <a href="#contas" class="bg-crimson hover:bg-red-700 text-white shadow-glow-red text-xs font-bold px-4 py-2 rounded-lg transition-colors">
-                    Serviços
+            <div class="flex items-center gap-4">
+                <a href="#calculadora" class="hidden sm:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">LABORATÓRIO</a>
+                <a href="#contas" class="hidden sm:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">CONTAS</a>
+                <a href="#planos" class="hidden sm:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">COLETA</a>
+                <a href="https://wa.me/5500000000000" target="_blank" class="bg-crimson hover:bg-red-700 text-white shadow-glow-red text-xs font-bold px-4 py-2 rounded-lg transition-colors">
+                    Falar no WhatsApp
                 </a>
             </div>
         </div>
@@ -84,70 +79,47 @@
 
     <!-- HERO SECTION -->
     <section class="relative overflow-hidden py-16 px-4 text-center border-b border-zinc-900/50">
-        <!-- Brilho de fundo subtil -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-crimson/10 blur-[120px] rounded-full pointer-events-none"></div>
         
-        <div class="max-w-3xl mx-auto relative z-10">
+        <div class="max-w-4xl mx-auto relative z-10">
             <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider shadow-glow-gold">
-                Engenharia Tática & Domínio F2P
+                Engenharia Tática F2P
             </span>
             <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
                 Não jogamos para competir.<br>
                 <span class="gradient-text">Jogamos para esmagar.</span>
             </h1>
-            <p class="text-zinc-400 text-sm md:text-base mb-10 max-w-xl mx-auto leading-relaxed">
-                Simule a Regra dos 180% por exercício, planeje o gasto de maletas dos seus mutantes ou assuma o controlo com uma conta estruturada do Sindicato FC.
+            <p class="text-zinc-400 text-sm md:text-base mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                Simule a Regra dos 180% por exercício, planeje o gasto de maletas dos seus mutantes ou assuma o controle com uma conta estruturada do Sindicato FC LAB.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#calculadora" class="bg-crimson hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl transition-all shadow-glow-red hover:shadow-[0_0_40px_-5px_rgba(225,29,72,0.6)]">
-                    🧬 Abrir Laboratório de Mutantes
-                </a>
-                <a href="https://wa.me/5500000000000?text=Fala%20PHDA7!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank"
-                   class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-extrabold px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Chamar no WhatsApp
+                <a href="#calculadora" class="bg-crimson hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl transition-all shadow-glow-red">
+                    🧬 Abrir Laboratório
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO INTERATIVA: LABORATÓRIO 3 EM 1 -->
-    <section id="calculadora" class="py-16 px-4 max-w-5xl mx-auto border-b border-zinc-900/50">
+    <!-- LABORATÓRIO 180% -->
+    <section id="calculadora" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
         <div class="text-center mb-10">
-            <span class="text-xs font-bold uppercase tracking-widest text-gold">Engenharia Reversa Oficial</span>
-            <h2 class="text-3xl md:text-4xl font-black mt-2 mb-3">🧮 Laboratório de <span class="text-crimson">Mutantes</span></h2>
-            <p class="text-zinc-400 text-sm max-w-xl mx-auto">
-                Baseado na matriz oficial de pesos (Brancas 1.8x | Cinzas 1.0x) e na Regra da Média de Exercícios (&lt;180%).
-            </p>
+            <span class="text-xs font-bold uppercase tracking-widest text-gold">Matriz Oficial</span>
+            <h2 class="text-3xl font-black mt-2">🧮 Motor de <span class="text-crimson">Cálculo F2P</span></h2>
         </div>
 
-        <!-- ABAS DA CALCULADORA -->
-        <div class="flex flex-wrap justify-center gap-3 mb-8">
-            <button onclick="switchTab('regra180')" id="tab-regra180" class="bg-crimson text-white font-bold text-xs md:text-sm px-5 py-3 rounded-xl transition-all shadow-glow-red hover:bg-red-700">
-                1. Regra dos 180% (Exercícios)
-            </button>
-            <button onclick="switchTab('maletas')" id="tab-maletas" class="bg-card border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 font-bold text-xs md:text-sm px-5 py-3 rounded-xl transition-all">
-                2. Consumo de Maletas
-            </button>
-            <button onclick="switchTab('avatar')" id="tab-avatar" class="bg-card border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 font-bold text-xs md:text-sm px-5 py-3 rounded-xl transition-all">
-                3. Teste Avatar (F.T.)
-            </button>
-        </div>
-
-        <!-- PAINEL 1: SIMULADOR 180% -->
-        <div id="panel-regra180" class="card-premium rounded-2xl p-6 md:p-8 shadow-glow-red border-crimson/30">
+        <div class="card-premium rounded-2xl p-6 md:p-8 shadow-glow-red border-crimson/30">
             <div class="grid md:grid-cols-2 gap-8 items-start">
+                <!-- Esquerda: Inputs -->
                 <div class="space-y-5">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Posição</label>
                             <select id="r180-pos" onchange="atualizarExercicio180(true)" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-crimson outline-none cursor-pointer">
                                 <option value="ST">ST (Atacante)</option>
                                 <option value="AML">AML / AMR (Pontas)</option>
-                                <option value="AMC">AMC (Meia Atacante)</option>
+                                <option value="AMC">AMC (Meia Ofensivo)</option>
                                 <option value="MC">MC (Meia Central)</option>
-                                <option value="ML">ML / MR (Meias Laterais)</option>
                                 <option value="DMC">DMC (Volante)</option>
                                 <option value="DC">DC (Zagueiro)</option>
                                 <option value="DL">DL / DR (Laterais)</option>
@@ -155,361 +127,293 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Exercício</label>
-                            <select id="r180-drill" onchange="atualizarExercicio180(false)" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-crimson outline-none cursor-pointer">
-                                <!-- Preenchido via JS -->
-                            </select>
+                            <select id="r180-drill" onchange="atualizarExercicio180(false)" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-crimson outline-none cursor-pointer"></select>
                         </div>
                     </div>
 
                     <div class="bg-carbon border border-zinc-800 rounded-xl p-5">
                         <div class="flex justify-between items-center mb-4 border-b border-zinc-800 pb-2">
-                            <span class="text-xs font-bold text-zinc-300 uppercase">Atributos do Exercício</span>
-                            <button onclick="preencherExemploMutante()" class="text-[11px] text-gold hover:text-amber-400 transition-colors font-bold uppercase tracking-wide">
-                                ⚡ Forçar Cinzas a 1%
+                            <span class="text-xs font-bold text-zinc-300 uppercase">Porcentagem dos Atributos (%)</span>
+                            <button onclick="preencherExemploMutante()" class="text-[10px] text-gold hover:text-amber-400 font-bold uppercase tracking-wide">
+                                ⚡ Simular Mutante
                             </button>
                         </div>
-                        <div id="r180-inputs" class="grid grid-cols-2 gap-3">
-                            <!-- Inputs JS -->
-                        </div>
-                    </div>
-
-                    <div class="bg-carbon/50 border border-zinc-800/80 rounded-xl p-4 text-xs text-zinc-400">
-                        <strong class="text-gold block mb-1 uppercase tracking-wide">📋 Ordem de Treinos (Receita F2P):</strong>
-                        <span id="r180-receita-preview" class="text-zinc-300 leading-relaxed"></span>
+                        <div id="r180-inputs" class="grid grid-cols-2 gap-3"></div>
                     </div>
                 </div>
 
+                <!-- Direita: Output -->
                 <div class="bg-carbon border border-zinc-800 rounded-xl p-6 flex flex-col h-full">
                     <div class="flex-1">
                         <div class="flex justify-between items-center border-b border-zinc-800 pb-3 mb-5">
-                            <span class="text-xs font-bold text-zinc-400 uppercase tracking-wide">Motor Matemático</span>
-                            <span id="r180-status" class="bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider">DESTRAVADO</span>
+                            <span class="text-xs font-bold text-zinc-400 uppercase tracking-wide">Desempenho da Média</span>
+                            <span id="r180-status" class="bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider">CALCULANDO</span>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-card p-4 rounded-xl border border-zinc-800 flex flex-col justify-center">
-                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide mb-1">Média Atual</span>
-                                <span id="r180-media" class="text-3xl font-black text-white">115.0%</span>
+                            <div class="bg-card p-4 rounded-xl border border-zinc-800">
+                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide mb-1 block">Média do Exercício</span>
+                                <span id="r180-media" class="text-3xl font-black text-white">0.0%</span>
                             </div>
-                            <div class="bg-card p-4 rounded-xl border border-zinc-800 flex flex-col justify-center">
-                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide mb-1">Teto Máximo</span>
-                                <span id="r180-teto" class="text-3xl font-black text-gold">~ 260%</span>
+                            <div class="bg-card p-4 rounded-xl border border-zinc-800">
+                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide mb-1 block">Teto (Atributo Branco)</span>
+                                <span id="r180-teto" class="text-3xl font-black text-gold">~ 0%</span>
                             </div>
                         </div>
 
                         <div class="mb-6">
                             <div class="flex justify-between text-[11px] font-bold uppercase tracking-wide mb-2">
-                                <span class="text-zinc-500">Progresso até o limite</span>
-                                <span id="r180-margem" class="text-emerald-400">Restam +65.0%</span>
+                                <span class="text-zinc-500">Progresso até Falha do Motor (180%)</span>
+                                <span id="r180-margem" class="text-emerald-400">0%</span>
                             </div>
                             <div class="w-full bg-zinc-900 h-3 rounded-full overflow-hidden border border-zinc-800">
-                                <div id="r180-bar" class="bg-crimson h-full transition-all duration-500 shadow-[0_0_10px_rgba(225,29,72,0.8)]" style="width: 64%"></div>
+                                <div id="r180-bar" class="bg-crimson h-full transition-all duration-500 shadow-[0_0_10px_rgba(225,29,72,0.8)]" style="width: 0%"></div>
                             </div>
                         </div>
-
-                        <p id="r180-diagnostico" class="text-sm text-zinc-300 bg-card/80 border border-zinc-800/80 p-4 rounded-xl leading-relaxed mb-6"></p>
                     </div>
-
-                    <a id="btn-orcamento-180" href="#" target="_blank" class="w-full text-center bg-emerald-500 hover:bg-emerald-600 text-black font-black uppercase tracking-wide py-4 rounded-xl text-sm transition-colors mt-auto">
-                        🔓 Desbloquear Receita Completa
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAINEL 2: SIMULADOR DE MALETAS -->
-        <div id="panel-maletas" class="hidden card-premium rounded-2xl p-6 md:p-8 shadow-glow-red border-crimson/30">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Idade do Jogador</label>
-                        <select id="calc-age" onchange="calcularMutante()" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-crimson outline-none cursor-pointer">
-                            <option value="1">18 anos (Ideal - Explosão F2P)</option>
-                            <option value="1.18">19 anos (Evolução Rápida)</option>
-                            <option value="1.40">20 anos (Evolução Moderada)</option>
-                            <option value="1.75">21 anos (Idade de Ouro)</option>
-                            <option value="2.30">22+ anos (Custo Penalizado)</option>
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">GRL Atual (%)</label>
-                            <input type="number" id="calc-atual" value="95" min="40" max="200" oninput="calcularMutante()" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:border-crimson outline-none text-center">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Meta (%)</label>
-                            <input type="number" id="calc-meta" value="145" min="60" max="250" oninput="calcularMutante()" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:border-crimson outline-none text-center">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Método (Pesos)</label>
-                        <select id="calc-tipo" onchange="calcularMutante()" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-crimson outline-none cursor-pointer">
-                            <option value="mutante">Mutante: Brancos 250%+ (Cinzas a 1%)</option>
-                            <option value="padrao">Comum: Ganho Geral (Menos Eficiente)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="bg-carbon border border-zinc-800 rounded-xl p-6 flex flex-col h-full">
-                    <div class="flex-1">
-                        <div class="flex justify-between items-center border-b border-zinc-800 pb-3 mb-5">
-                            <span class="text-xs font-bold text-zinc-400 uppercase tracking-wide">Orçamento Base</span>
-                            <span id="res-badge" class="bg-gold/20 text-gold text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider">VIÁVEL</span>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-card p-4 rounded-xl border border-zinc-800">
-                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block mb-1">Custo Estimado</span>
-                                <span id="res-maletas" class="text-3xl font-black text-emerald-400">~ 750</span>
-                            </div>
-                            <div class="bg-card p-4 rounded-xl border border-zinc-800">
-                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide block mb-1">Evolução Bruta</span>
-                                <span id="res-ganho" class="text-3xl font-black text-gold">+50%</span>
-                            </div>
-                        </div>
-
-                        <p id="res-dica" class="text-sm text-zinc-300 bg-card border border-zinc-800 p-4 rounded-xl mb-6 leading-relaxed"></p>
-                    </div>
-
-                    <a id="btn-orcamento-treino" href="#" target="_blank" class="w-full text-center bg-emerald-500 hover:bg-emerald-600 text-black font-black uppercase tracking-wide py-4 rounded-xl text-sm transition-colors mt-auto">
-                        ⚡ Contratar Treino do PHDA7
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAINEL 3: TESTE AVATAR -->
-        <div id="panel-avatar" class="hidden card-premium rounded-2xl p-6 md:p-8 shadow-glow-gold border-gold/30">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Desempenho (Sessão Muito Difícil)</label>
-                        <select id="ft-teste" onchange="verificarFastTrainer()" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-gold outline-none cursor-pointer">
-                            <option value="puro">Sólido: 2-2-2 ou 2-2-1 constante</option>
-                            <option value="medio">Oscilante: 1-1-2 / 1-1-1 misturados</option>
-                            <option value="lixo">Lento: Demora a subir ou apenas 1-1</option>
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Média Brancos (%)</label>
-                            <input type="number" id="ft-brancos" value="190" oninput="verificarFastTrainer()" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:border-gold outline-none text-center">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Média Cinzas (%)</label>
-                            <input type="number" id="ft-cinzas" value="35" oninput="verificarFastTrainer()" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:border-gold outline-none text-center">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-carbon border border-zinc-800 rounded-xl p-6 h-full flex flex-col justify-center">
-                    <span class="text-xs font-bold text-zinc-400 uppercase tracking-wide block mb-4 border-b border-zinc-800 pb-2">Diagnóstico da Prancheta</span>
-                    <div id="ft-veredito" class="text-2xl font-black text-emerald-400 mb-3">🔥 FAST TRAINER PURO</div>
-                    <p id="ft-explicacao" class="text-sm text-zinc-300 leading-relaxed mb-6 flex-1"></p>
-                    
-                    <a href="https://wa.me/5500000000000?text=Testei%20um%20jogador%20na%20calculadora%20e%20deu%20Fast%20Trainer." target="_blank"
-                       class="w-full text-center bg-gold hover:bg-amber-500 text-black font-black uppercase tracking-wide py-4 rounded-xl text-sm transition-colors">
-                        Solicitar Evolução F2P
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO DE CONTAS -->
-    <section id="contas" class="py-16 px-4 max-w-5xl mx-auto border-b border-zinc-900/50">
+    <!-- MONTRA DE CONTAS (ESTILO MAX FUT LAB) -->
+    <section id="contas" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
         <div class="text-center mb-10">
-            <h2 class="text-3xl md:text-4xl font-black mb-3">💼 Contas de <span class="text-gold">Recursos</span></h2>
-            <p class="text-zinc-400 text-sm max-w-2xl mx-auto">Filtragem ativa. Entre no Top Eleven com a infraestrutura pronta para a Divisão Suprema.</p>
+            <h2 class="text-3xl font-black mb-3">💼 Contas de <span class="text-gold">Recursos</span></h2>
+            <p class="text-zinc-400 text-sm">Contas estruturadas, prontas para dominar o Dia 28 e a Divisão Suprema.</p>
         </div>
 
-        <div class="bg-card border border-zinc-800 rounded-2xl p-5 mb-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div>
-                <label class="text-[11px] text-zinc-400 font-bold uppercase tracking-wide block mb-2">Buscar Pack</label>
-                <input type="text" id="filter-search" oninput="filtrarContas()" placeholder="Ex: Elite..." class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white outline-none focus:border-gold">
-            </div>
-            <div>
-                <label class="text-[11px] text-zinc-400 font-bold uppercase tracking-wide block mb-2">Min. Maletas</label>
-                <input type="number" id="filter-maletas" oninput="filtrarContas()" placeholder="Ex: 5000" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white outline-none focus:border-gold">
-            </div>
-            <div>
-                <label class="text-[11px] text-zinc-400 font-bold uppercase tracking-wide block mb-2">Min. Tokens</label>
-                <input type="number" id="filter-tokens" oninput="filtrarContas()" placeholder="Ex: 200" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-2.5 text-sm text-white outline-none focus:border-gold">
-            </div>
-        </div>
-
-        <div id="lista-contas" class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-3 gap-6">
             <!-- CONTA 1 -->
-            <div class="conta-card card-premium p-6 flex flex-col justify-between" data-nome="pack iniciante" data-maletas="4500" data-tokens="200">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="font-black text-lg">INICIANTE</span>
-                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-3 py-1 rounded-full">Ativa</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-y-3 text-sm text-zinc-300 my-5 bg-carbon p-4 rounded-xl border border-zinc-800">
-                        <div>🧳 Maletas: <strong class="text-white">4.500</strong></div>
-                        <div>🪙 Tokens: <strong class="text-white">200</strong></div>
-                        <div>📘 Livros: <strong class="text-white">500</strong></div>
-                        <div>🔑 Via: <strong class="text-white">FB</strong></div>
-                    </div>
+            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
+                <!-- Área de Foto/Print da Conta -->
+                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+                    <!-- Substitua o src abaixo pelos links das suas fotos reais -->
+                    <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" alt="Print da Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
+                    <span class="absolute top-3 right-3 bg-black/80 border border-zinc-700 text-[10px] font-bold px-2 py-1 rounded text-white z-10 flex items-center gap-1">
+                        <svg class="w-3 h-3 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/></svg> Galeria
+                    </span>
                 </div>
-                <div>
-                    <div class="text-3xl font-black text-gold mb-4">R$ 180<span class="text-sm text-zinc-500 font-medium">,00</span></div>
-                    <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Iniciante." class="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-sm transition-colors">Garantir Acesso</a>
+                
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-black text-xl uppercase tracking-wide">FODEUGUITO</h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">68</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">10.500</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">1.801</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">📘 Livros:</span> <strong class="text-white">275</strong></div>
+                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    </div>
+                    
+                    <div class="mt-auto pt-4 flex items-center justify-between">
+                        <div class="text-2xl font-black text-white">R$ 400</div>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- CONTA 2 -->
-            <div class="conta-card card-premium border-crimson/50 shadow-glow-red p-6 flex flex-col justify-between transform md:-translate-y-2" data-nome="pack elite" data-maletas="8200" data-tokens="450">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="font-black text-lg">ELITE F2P</span>
-                        <span class="bg-crimson text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full">Top Vendas</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-y-3 text-sm text-zinc-300 my-5 bg-carbon p-4 rounded-xl border border-zinc-800">
-                        <div>🧳 Maletas: <strong class="text-white font-bold text-emerald-400">8.200</strong></div>
-                        <div>🪙 Tokens: <strong class="text-white">450</strong></div>
-                        <div>📘 Livros: <strong class="text-white">200</strong></div>
-                        <div>🔑 Via: <strong class="text-white">FB</strong></div>
-                    </div>
+            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition border-crimson/30 shadow-glow-red md:-translate-y-2">
+                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+                    <img src="https://placehold.co/600x400/09090b/e11d48?text=Print+da+Conta" alt="Print da Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
+                    <span class="absolute top-3 left-3 bg-crimson text-[10px] font-bold px-2 py-1 rounded text-white z-10 uppercase tracking-widest">Mais Vendida</span>
                 </div>
-                <div>
-                    <div class="text-3xl font-black text-gold mb-4">R$ 290<span class="text-sm text-zinc-500 font-medium">,00</span></div>
-                    <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Elite." class="w-full block text-center bg-emerald-500 hover:bg-emerald-600 text-black font-black uppercase tracking-wide py-3 rounded-xl text-sm transition-colors">Garantir Acesso</a>
+                
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-black text-xl uppercase tracking-wide text-crimson">DRAGÃO</h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">60</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">8.282</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">448</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">📘 Livros:</span> <strong class="text-white">136</strong></div>
+                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    </div>
+                    
+                    <div class="mt-auto pt-4 flex items-center justify-between">
+                        <div class="text-2xl font-black text-white">R$ 300</div>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="bg-crimson hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- CONTA 3 -->
-            <div class="conta-card card-premium border-gold/40 shadow-glow-gold p-6 flex flex-col justify-between" data-nome="sindicato suprema" data-maletas="10500" data-tokens="1800">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="font-black text-lg text-gold">SUPREMA</span>
-                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-3 py-1 rounded-full">Ativa</span>
-                    </div>
-                    <div class="grid grid-cols-2 gap-y-3 text-sm text-zinc-300 my-5 bg-carbon p-4 rounded-xl border border-zinc-800">
-                        <div>🧳 Maletas: <strong class="text-white font-bold text-emerald-400">10.500</strong></div>
-                        <div>🪙 Tokens: <strong class="text-white font-bold text-gold">1.800</strong></div>
-                        <div>📘 Livros: <strong class="text-white">275</strong></div>
-                        <div>🔑 Via: <strong class="text-white">FB</strong></div>
-                    </div>
+            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
+                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+                    <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" alt="Print da Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
                 </div>
-                <div>
-                    <div class="text-3xl font-black text-gold mb-4">R$ 390<span class="text-sm text-zinc-500 font-medium">,00</span></div>
-                    <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Suprema." class="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-sm transition-colors">Garantir Acesso</a>
+                
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-black text-xl uppercase tracking-wide">QARABAG</h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">33</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">4.500</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">200</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">📘 Livros:</span> <strong class="text-white">200</strong></div>
+                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    </div>
+                    
+                    <div class="mt-auto pt-4 flex items-center justify-between">
+                        <div class="text-2xl font-black text-white">R$ 200</div>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO 3: SERVIÇOS & CONSULTORIA -->
-    <section class="py-16 px-4 max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-black mb-3">⚙️ Serviços de <span class="text-crimson">Prancheta</span></h2>
-            <p class="text-zinc-400 text-sm">Automação de recursos e auditoria de plantel.</p>
+    <!-- MATRIZ DE SERVIÇOS (TABELA DE PLANOS ESTILO MAX) -->
+    <section id="planos" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-black mb-3">⚙️ Planos de <span class="text-crimson">Coleta Automática</span></h2>
+            <p class="text-zinc-400 text-sm">Compare os planos e deixe o farm diário com o Sindicato FC.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="card-premium rounded-2xl p-6 md:p-8">
-                <h3 class="font-black text-xl mb-2">COLETA PRO</h3>
-                <p class="text-sm text-zinc-400 mb-6">Acumulação diária no automático.</p>
-                <ul class="space-y-3 text-sm text-zinc-300 mb-8 border-t border-zinc-800 pt-6">
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Check-in + Streak</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> 25 Maletas/dia</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Eventos básicos</li>
-                </ul>
-                <a href="#" class="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-sm transition-colors">Consultar Valor</a>
-            </div>
-
-            <div class="card-premium border-gold/50 shadow-glow-gold rounded-2xl p-6 md:p-8 transform md:-translate-y-4">
-                <span class="bg-gold text-black text-[10px] font-black px-3 py-1 rounded uppercase tracking-wider mb-3 inline-block">Premium</span>
-                <h3 class="font-black text-xl mb-2">COLETA SINDICATO</h3>
-                <p class="text-sm text-zinc-400 mb-6">A sua conta operada a 100% todos os dias.</p>
-                <ul class="space-y-3 text-sm text-zinc-300 mb-8 border-t border-zinc-800 pt-6">
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Check-in Total</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Drop Ball & Campus</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400">✔</span> Renovação Diária</li>
-                </ul>
-                <a href="#" class="w-full block text-center bg-gold hover:bg-amber-500 text-black font-black uppercase tracking-wide py-3 rounded-xl text-sm transition-colors">Assinar Agora</a>
-            </div>
-
-            <div class="card-premium border-crimson/40 rounded-2xl p-6 md:p-8">
-                <span class="bg-crimson text-white text-[10px] font-black px-3 py-1 rounded uppercase tracking-wider mb-3 inline-block">Consultoria</span>
-                <h3 class="font-black text-xl mb-2">AUDITORIA DIA 28</h3>
-                <p class="text-sm text-zinc-400 mb-6">Limpeza tática e preparação de sorteio.</p>
-                <ul class="space-y-3 text-sm text-zinc-300 mb-8 border-t border-zinc-800 pt-6">
-                    <li class="flex items-center gap-2"><span class="text-crimson">✔</span> Tática Falso Líbero</li>
-                    <li class="flex items-center gap-2"><span class="text-crimson">✔</span> Guilhotina do Top 14</li>
-                    <li class="flex items-center gap-2"><span class="text-crimson">✔</span> Planeamento Mutantes</li>
-                </ul>
-                <a href="#" class="w-full block text-center bg-crimson hover:bg-red-700 text-white font-bold py-3 rounded-xl text-sm transition-colors">Agendar Sessão</a>
+        <div class="card-premium rounded-2xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-zinc-400 plan-table">
+                    <thead class="text-xs uppercase bg-zinc-900/80 text-zinc-300">
+                        <tr>
+                            <th scope="col" class="py-5 font-black">Recurso / Serviço Diário</th>
+                            <th scope="col" class="text-center">BASIC</th>
+                            <th scope="col" class="text-center">PRO</th>
+                            <th scope="col" class="text-center">PRIME</th>
+                            <th scope="col" class="text-center bg-crimson/10 text-crimson font-black rounded-t-lg">
+                                <span class="block">FULL SINDICATO</span>
+                                <span class="text-[9px] bg-crimson text-white px-2 py-0.5 rounded-full mt-1 inline-block">Mais Completo</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Check-in Diário</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Daily Streak (Bónus Consecutivo)</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Recolha de Maletas Verdes (+25/dia)</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Maletas Extras de Eventos</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="text-zinc-700">✕</td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Farm de Livros de Treino</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Evento Drop Ball (Pontos de Classe)</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Renovação de Contratos</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Coletas do Campus da Juventude</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Evolução de Estruturas (Campus)</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <!-- Linha dos Botões -->
+                        <tr>
+                            <td></td>
+                            <td class="py-4 px-2">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20Basic" class="block w-full border border-zinc-600 text-zinc-300 hover:text-white hover:bg-zinc-800 font-bold text-xs py-2 rounded transition text-center">Contratar BASIC</a>
+                            </td>
+                            <td class="py-4 px-2">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20Pro" class="block w-full border border-zinc-600 text-zinc-300 hover:text-white hover:bg-zinc-800 font-bold text-xs py-2 rounded transition text-center">Contratar PRO</a>
+                            </td>
+                            <td class="py-4 px-2">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20Prime" class="block w-full border border-zinc-600 text-zinc-300 hover:text-white hover:bg-zinc-800 font-bold text-xs py-2 rounded transition text-center">Contratar PRIME</a>
+                            </td>
+                            <td class="py-4 px-2 bg-crimson/5">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20FULL" class="block w-full bg-crimson hover:bg-red-700 text-white font-bold text-xs py-2 rounded shadow-glow-red transition text-center">Contratar FULL</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-zinc-900 bg-carbon py-10 text-center text-zinc-500">
-        <p class="font-bold text-zinc-400 mb-2 uppercase tracking-widest text-xs">Laboratório F2P | Sindicato FC</p>
-        <p class="text-sm">Matemática aplicada ao Top Eleven. © 2026</p>
+    <footer class="bg-carbon py-10 text-center text-zinc-500 border-t border-zinc-900 mt-10">
+        <p class="font-bold text-zinc-400 mb-2 uppercase tracking-widest text-xs">Sindicato FC LAB | Prancheta PHDA7</p>
+        <p class="text-sm">Matemática e Engenharia Reversa para Top Eleven.</p>
     </footer>
 
-    <!-- LÓGICA DE CÁLCULO E MOTOR JS (MANTIDA 100% INTACTA DA PRANCHETA ORIGINAL) -->
+    <!-- SCRIPT DO LABORATÓRIO (MOTOR 180%) -->
     <script>
-        const WHATSAPP_NUMBER = "5500000000000";
-
         const DRILLS_DB = [
             { id: 1, nome: "Marcar Homem a Homem", attrs: ["Corte", "Drible", "Finalização"] },
             { id: 2, nome: "Passe, vá e dispare", attrs: ["Velocidade", "Passe", "Chute"] },
-            { id: 3, nome: "Jogada ensaiada", attrs: ["Marcação", "Cabeçada", "Cruzamento", "Chute"] },
-            { id: 4, nome: "Técnica de chute", attrs: ["Força", "Chute", "Finalização"] },
-            { id: 5, nome: "Drible de slalom", attrs: ["Condicionamento", "Velocidade", "Passe", "Drible"] },
             { id: 6, nome: "Jogada na ponta", attrs: ["Cabeçada", "Cruzamento", "Chute", "Finalização"] },
             { id: 7, nome: "Contra-ataque Rápido", attrs: ["Criatividade", "Passe", "Cruzamento", "Finalização"] },
-            { id: 8, nome: "Análise de vídeo", attrs: ["Criatividade", "Posicionamento", "Coragem"] },
-            { id: 9, nome: "Cabeceada", attrs: ["Criatividade", "Posicionamento", "Cabeçada", "Passe"] },
             { id: 10, nome: "Uma linha de defesa", attrs: ["Marcação", "Posicionamento"] },
             { id: 11, nome: "Parar o atacante", attrs: ["Força", "Corte", "Marcação", "Coragem", "Drible"] },
             { id: 12, nome: "Cruzamento de Defesa", attrs: ["Marcação", "Cabeçada", "Coragem", "Cruzamento"] },
-            { id: 13, nome: "Pressione o play", attrs: ["Agressividade", "Corte", "Marcação", "Posicionamento", "Coragem"] },
-            { id: 15, nome: "Controle de Bola", attrs: ["Criatividade", "Cabeçada", "Drible"] },
-            { id: 16, nome: "Jogo de bobinho", attrs: ["Condicionamento", "Agressividade", "Corte", "Posicionamento", "Passe"] },
-            { id: 17, nome: "Matada de Bola", attrs: ["Condicionamento", "Passe", "Drible"] },
-            { id: 18, nome: "Virada de Jogo", attrs: ["Velocidade", "Criatividade", "Posicionamento", "Passe", "Cruzamento"] },
-            { id: 19, nome: "Posicionamento", attrs: ["Condicionamento", "Velocidade", "Posicionamento"] },
-            { id: 20, nome: "Passes Para o Chute", attrs: ["Criatividade", "Posicionamento", "Passe", "Finalização"] },
-            { id: 21, nome: "Entradas", attrs: ["Força", "Agressividade", "Marcação", "Coragem", "Drible"] },
-            { id: 22, nome: "Aquecimento", attrs: ["Condicionamento", "Agressividade", "Cabeçada"] },
-            { id: 23, nome: "Alongamento", attrs: ["Condicionamento", "Força", "Velocidade"] },
-            { id: 24, nome: "Carioca com escada", attrs: ["Agressividade", "Velocidade"] },
-            { id: 25, nome: "Corrida longa", attrs: ["Condicionamento", "Velocidade"] },
-            { id: 26, nome: "Corrida de ir e vir", attrs: ["Força", "Velocidade", "Coragem"] },
-            { id: 27, nome: "Corrida de obstáculo", attrs: ["Agressividade", "Velocidade", "Coragem"] },
-            { id: 28, nome: "Academia", attrs: ["Condicionamento", "Força"] },
-            { id: 29, nome: "Arrancada", attrs: ["Condicionamento", "Velocidade", "Drible"] }
+            { id: 28, nome: "Academia", attrs: ["Condicionamento", "Força"] }
         ];
 
         const WHITE_ATTRS = {
-            "DL": ["Condicionamento", "Agressividade", "Velocidade", "Corte", "Marcação", "Posicionamento", "Coragem", "Cruzamento"],
-            "DC": ["Condicionamento", "Força", "Agressividade", "Corte", "Marcação", "Posicionamento", "Cabeçada", "Coragem"],
-            "DMC": ["Condicionamento", "Força", "Agressividade", "Criatividade", "Corte", "Marcação", "Posicionamento", "Cabeçada", "Coragem", "Passe"],
-            "ML": ["Condicionamento", "Velocidade", "Criatividade", "Posicionamento", "Passe", "Drible", "Cruzamento"],
-            "MC": ["Condicionamento", "Velocidade", "Criatividade", "Corte", "Marcação", "Posicionamento", "Coragem", "Passe", "Drible", "Chute"],
+            "ST": ["Força", "Velocidade", "Criatividade", "Posicionamento", "Cabeçada", "Passe", "Drible", "Chute", "Finalização"],
             "AML": ["Condicionamento", "Velocidade", "Criatividade", "Passe", "Drible", "Cruzamento", "Chute", "Finalização"],
             "AMC": ["Condicionamento", "Velocidade", "Criatividade", "Cabeçada", "Passe", "Drible", "Chute", "Finalização"],
-            "ST": ["Força", "Velocidade", "Criatividade", "Posicionamento", "Cabeçada", "Passe", "Drible", "Chute", "Finalização"]
-        };
-
-        const RECEITA_PREVIEW = {
-            "ST": { defaultDrill: 6, text: "Passo 1: Controle de Bola / Jogada na Ponta (Usa Cruzamento cinza para impulsionar Finalização e Chute) ➔ Passo 2: Passe, vá e dispare ➔ [+26 passos ocultos]" },
-            "AML": { defaultDrill: 6, text: "Passo 1: Jogada na Ponta (Usa Cabeçada cinza para subir Cruzamento e Finalização >240%) ➔ Passo 2: Contra-ataque Rápido ➔ [+26 passos ocultos]" },
-            "AMC": { defaultDrill: 7, text: "Passo 1: Contra-ataque Rápido ➔ Passo 2: Técnica de chute ➔ [+26 passos ocultos]" },
-            "MC": { defaultDrill: 2, text: "Passo 1: Marcar Homem a Homem ➔ Passo 2: Passe, vá e dispare ➔ Passo 3: Jogada ensaiada ➔ [+25 passos ocultos]" },
-            "ML": { defaultDrill: 18, text: "Passo 1: Virada de Jogo ➔ Passo 2: Drible de slalom ➔ Passo 3: Arrancada ➔ [+25 passos ocultos]" },
-            "DMC": { defaultDrill: 10, text: "Passo 1: Marcar Homem a Homem ➔ Passo 2: Passe, vá e dispare ➔ Passo 3: Uma linha de defesa ➔ [+25 passos ocultos]" },
-            "DC": { defaultDrill: 11, text: "Passo 1: Parar o Atacante (Usa Drible cinza baixo para disparar Marcação e Coragem) ➔ Passo 2: Técnica de chute ➔ [+26 passos ocultos]" },
-            "DL": { defaultDrill: 12, text: "Passo 1: Cruzamento de Defesa ➔ Passo 2: Análise de Vídeo ➔ [+26 passos ocultos]" }
+            "MC": ["Condicionamento", "Velocidade", "Criatividade", "Corte", "Marcação", "Posicionamento", "Coragem", "Passe", "Drible", "Chute"],
+            "DMC": ["Condicionamento", "Força", "Agressividade", "Criatividade", "Corte", "Marcação", "Posicionamento", "Cabeçada", "Coragem", "Passe"],
+            "DC": ["Condicionamento", "Força", "Agressividade", "Corte", "Marcação", "Posicionamento", "Cabeçada", "Coragem"],
+            "DL": ["Condicionamento", "Agressividade", "Velocidade", "Corte", "Marcação", "Posicionamento", "Coragem", "Cruzamento"]
         };
 
         function inicializarSelectDrills() {
@@ -518,41 +422,39 @@
             DRILLS_DB.forEach(d => {
                 const opt = document.createElement('option');
                 opt.value = d.id;
-                opt.text = `${d.nome} (${d.attrs.length} atrib.)`;
+                opt.text = d.nome;
                 select.appendChild(opt);
             });
             atualizarExercicio180(true);
         }
 
-        function atualizarExercicio180(mudouPosicao) {
+        function atualizarExercicio180() {
             const pos = document.getElementById('r180-pos').value;
             const selectDrill = document.getElementById('r180-drill');
-
-            if (mudouPosicao && RECEITA_PREVIEW[pos]) {
-                selectDrill.value = RECEITA_PREVIEW[pos].defaultDrill;
-                document.getElementById('r180-receita-preview').innerText = RECEITA_PREVIEW[pos].text;
-            }
-
             const drillId = parseInt(selectDrill.value);
             const drill = DRILLS_DB.find(d => d.id === drillId) || DRILLS_DB[0];
             const brancosPos = WHITE_ATTRS[pos] || [];
+            
             const container = document.getElementById('r180-inputs');
             container.innerHTML = '';
 
-            drill.attrs.forEach((attr) => {
+            drill.attrs.forEach(attr => {
                 const isWhite = brancosPos.includes(attr);
-                const defaultVal = isWhite ? 185 : 25;
+                const defaultVal = isWhite ? 120 : 20;
                 const badgeColor = isWhite ? "text-emerald-400 border-emerald-500/40 bg-emerald-500/10" : "text-zinc-400 border-zinc-700 bg-zinc-800/60";
                 
                 const div = document.createElement('div');
-                div.className = "bg-card p-3 rounded-xl border border-zinc-800 transition-colors focus-within:border-zinc-600";
+                div.className = "bg-card p-3 rounded-xl border border-zinc-800 focus-within:border-zinc-500 transition-colors";
                 div.innerHTML = `
                     <div class="flex justify-between items-center mb-2">
-                        <span class="text-xs font-bold text-white truncate">${attr}</span>
-                        <span class="text-[9px] font-black px-1.5 py-0.5 rounded border ${badgeColor}">${isWhite ? '1.8x' : '1.0x'}</span>
+                        <span class="text-xs font-bold text-white">${attr}</span>
+                        <span class="text-[9px] font-black px-1.5 py-0.5 rounded border ${badgeColor}">${isWhite ? 'BRANCO 1.8x' : 'CINZA 1.0x'}</span>
                     </div>
-                    <input type="number" data-white="${isWhite}" data-attr="${attr}" value="${defaultVal}" min="1" max="350" oninput="calcularMediaExercicio()"
-                           class="r180-attr-input w-full bg-carbon border border-zinc-700 rounded-lg px-3 py-2 text-sm font-bold text-white focus:border-crimson outline-none">
+                    <div class="relative">
+                        <input type="number" data-white="${isWhite}" value="${defaultVal}" min="1" max="350" oninput="calcularMediaExercicio()"
+                               class="r180-attr-input w-full bg-carbon border border-zinc-700 rounded-lg px-3 py-2 pr-6 text-sm font-bold text-white focus:border-crimson outline-none">
+                        <span class="absolute right-2 top-2 text-xs text-zinc-500 pointer-events-none">%</span>
+                    </div>
                 `;
                 container.appendChild(div);
             });
@@ -561,156 +463,56 @@
 
         function preencherExemploMutante() {
             document.querySelectorAll('.r180-attr-input').forEach(inp => {
-                inp.value = inp.getAttribute('data-white') === 'true' ? 210 : 20;
+                inp.value = inp.getAttribute('data-white') === 'true' ? 240 : 1;
             });
             calcularMediaExercicio();
         }
 
         function calcularMediaExercicio() {
             const inputs = document.querySelectorAll('.r180-attr-input');
-            let soma = 0, qtdBrancos = 0, qtdCinzas = 0, somaCinzas = 0;
+            let soma = 0, qtdBrancos = 0, somaCinzas = 0, qtdCinzas = 0;
 
             inputs.forEach(inp => {
-                const val = parseFloat(inp.value) || 1;
+                const val = parseFloat(inp.value) || 0;
                 soma += val;
-                if (inp.getAttribute('data-white') === 'true') { qtdBrancos++; } 
+                if(inp.getAttribute('data-white') === 'true') { qtdBrancos++; }
                 else { qtdCinzas++; somaCinzas += val; }
             });
 
-            const totalAttrs = inputs.length;
-            const mediaAtual = soma / totalAttrs;
-            const margemMedia = 180 - mediaAtual;
+            const total = inputs.length;
+            const media = soma / total;
+            const margem = Math.max(0, 180 - media);
 
             let tetoBranco = 180;
             if (qtdBrancos > 0) {
-                tetoBranco = Math.round(((180 * totalAttrs) - (somaCinzas + (qtdCinzas * 15))) / qtdBrancos);
+                tetoBranco = Math.round(((180 * total) - somaCinzas) / qtdBrancos);
             }
 
-            document.getElementById('r180-media').innerText = `${mediaAtual.toFixed(1)}%`;
+            document.getElementById('r180-media').innerText = `${media.toFixed(1)}%`;
             document.getElementById('r180-teto').innerText = qtdBrancos > 0 ? `~ ${Math.max(180, tetoBranco)}%` : "100% Cinza";
-
+            
             const bar = document.getElementById('r180-bar');
-            bar.style.width = `${Math.min(100, Math.max(5, Math.round((mediaAtual / 180) * 100)))}%`;
+            bar.style.width = `${Math.min(100, (media / 180) * 100)}%`;
 
             const status = document.getElementById('r180-status');
             const margemEl = document.getElementById('r180-margem');
-            const diag = document.getElementById('r180-diagnostico');
 
-            if (mediaAtual >= 180) {
+            if (media >= 180) {
                 status.innerText = "TRAVADO (≥180%)";
                 status.className = "bg-crimson text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
                 bar.className = "bg-crimson h-full transition-all duration-300 shadow-[0_0_10px_rgba(225,29,72,0.8)]";
-                margemEl.innerText = "Esgotado (0%)";
-                margemEl.className = "font-bold text-crimson";
-                diag.innerHTML = `⛔ <strong>Pare imediatamente!</strong> A média atingiu <strong>${mediaAtual.toFixed(1)}%</strong>. O motor cortou o ganho de XP.`;
-            } else if (qtdCinzas > 0 && qtdBrancos > 0) {
-                status.innerText = "ALAVANCA MUTANTE";
+                margemEl.innerText = "0% (Ganho +1)";
+                margemEl.className = "text-crimson font-bold";
+            } else {
+                status.innerText = "XP LIBERADO";
                 status.className = "bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
-                bar.className = "bg-emerald-400 h-full transition-all duration-300 shadow-[0_0_10px_rgba(52,211,153,0.6)]";
-                margemEl.innerText = `Restam +${margemMedia.toFixed(1)}%`;
-                margemEl.className = "font-bold text-emerald-400";
-                diag.innerHTML = `🧬 <strong>Combinação Perfeita:</strong> Os atributos cinzas estão a manter a média baixa (<strong>${mediaAtual.toFixed(1)}%</strong>), permitindo empurrar os brancos até ~<strong>${Math.max(180, tetoBranco)}%</strong>.`;
-            } else {
-                status.innerText = "TREINO PURO";
-                status.className = "bg-gold/20 text-gold text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
-                bar.className = "bg-gold h-full transition-all duration-300 shadow-[0_0_10px_rgba(245,158,11,0.6)]";
-                margemEl.innerText = `Restam +${margemMedia.toFixed(1)}%`;
-                margemEl.className = "font-bold text-gold";
-                diag.innerHTML = `⚠️ <strong>Atenção:</strong> Exercício 100% branco. Deve ser usado no início do treino para não travar a média cedo.`;
+                bar.className = "bg-emerald-500 h-full transition-all duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]";
+                margemEl.innerText = `Restam +${margem.toFixed(1)}%`;
+                margemEl.className = "text-emerald-400 font-bold";
             }
         }
 
-        function switchTab(tab) {
-            ['regra180', 'maletas', 'avatar'].forEach(k => {
-                const isCurrent = k === tab;
-                document.getElementById(`panel-${k}`).classList.toggle('hidden', !isCurrent);
-                const tabEl = document.getElementById(`tab-${k}`);
-                if(isCurrent) {
-                    tabEl.className = k === 'avatar' 
-                        ? "bg-gold text-black font-black uppercase tracking-wide text-xs md:text-sm px-5 py-3 rounded-xl transition-all shadow-glow-gold"
-                        : "bg-crimson text-white font-black uppercase tracking-wide text-xs md:text-sm px-5 py-3 rounded-xl transition-all shadow-glow-red hover:bg-red-700";
-                } else {
-                    tabEl.className = "bg-card border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 font-bold text-xs md:text-sm px-5 py-3 rounded-xl transition-all";
-                }
-            });
-        }
-
-        function calcularMutante() {
-            const ageMultiplier = parseFloat(document.getElementById('calc-age').value);
-            const atual = parseInt(document.getElementById('calc-atual').value) || 0;
-            const meta = parseInt(document.getElementById('calc-meta').value) || 0;
-            const tipo = document.getElementById('calc-tipo').value;
-
-            const diff = Math.max(0, meta - atual);
-            let basePerPercent = tipo === 'mutante' ? 14 : 11;
-            if (meta > 140) basePerPercent += 4;
-            if (meta > 170) basePerPercent += 7;
-
-            const maletasEstimadas = Math.round(diff * basePerPercent * ageMultiplier);
-
-            document.getElementById('res-maletas').innerText = diff > 0 ? `~ ${maletasEstimadas}` : "0";
-            document.getElementById('res-ganho').innerText = `+${diff}%`;
-
-            const badge = document.getElementById('res-badge');
-            const dica = document.getElementById('res-dica');
-
-            if (meta >= 180) {
-                badge.innerText = "Quebra 180%";
-                badge.className = "bg-crimson text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
-                dica.innerHTML = "⚠️ <strong>Atenção:</strong> Acima de 180% é obrigatório usar Pontos de Classe ou a eficiência matemática é destruída.";
-            } else {
-                badge.innerText = "Viável";
-                badge.className = "bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
-                dica.innerHTML = "💡 <strong>Dica F2P:</strong> Mantenha os atributos cinzas abaixo de 40% durante o processo para maximizar a Ordem de Treinos.";
-            }
-        }
-
-        function verificarFastTrainer() {
-            const teste = document.getElementById('ft-teste').value;
-            const brancos = parseInt(document.getElementById('ft-brancos').value) || 0;
-            const cinzas = parseInt(document.getElementById('ft-cinzas').value) || 0;
-            const mediaPonderada = Math.round(((brancos * 1.8) + (cinzas * 1.0)) / 2.8);
-
-            const veredito = document.getElementById('ft-veredito');
-            const explicacao = document.getElementById('ft-explicacao');
-
-            if (teste === 'puro' && cinzas <= 60) {
-                veredito.innerText = `🔥 F.T. PURO (~${mediaPonderada}%)`;
-                veredito.className = "text-2xl font-black text-emerald-400 mb-3";
-                explicacao.innerText = `Excelente candidato! Com cinzas em ${cinzas}%, existe margem massiva antes de bater nos 180%. Pode chegar a 300% de Brancos!`;
-            } else if (teste === 'lixo' || cinzas > 110) {
-                veredito.innerText = `🗑️ ALERTA CILADA`;
-                veredito.className = "text-2xl font-black text-crimson mb-3";
-                explicacao.innerText = `Cinzas muito altos (${cinzas}%). Vai travar os exercícios mistos cedo demais. Venda imediata, não gaste recursos.`;
-            } else {
-                veredito.innerText = `⚠️ MEDIANO`;
-                veredito.className = "text-2xl font-black text-gold mb-3";
-                explicacao.innerText = `Jogador de transição. Vai consumir 35% mais maletas verdes que um F.T. Puro para atingir a mesma média.`;
-            }
-        }
-
-        function filtrarContas() {
-            const busca = document.getElementById('filter-search').value.toLowerCase();
-            const minMaletas = parseInt(document.getElementById('filter-maletas').value) || 0;
-            const minTokens = parseInt(document.getElementById('filter-tokens').value) || 0;
-            const cards = document.querySelectorAll('.conta-card');
-
-            cards.forEach(card => {
-                const nome = card.getAttribute('data-nome');
-                const maletas = parseInt(card.getAttribute('data-maletas'));
-                const tokens = parseInt(card.getAttribute('data-tokens'));
-
-                if (nome.includes(busca) && maletas >= minMaletas && tokens >= minTokens) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
-
-        // Init
-        inicializarSelectDrills();
-        calcularMutante();
+        window.onload = inicializarSelectDrills;
     </script>
 </body>
 </html>
