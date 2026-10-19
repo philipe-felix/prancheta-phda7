@@ -132,4 +132,384 @@
             <div class="relative w-full aspect-video bg-carbon rounded-xl overflow-hidden border border-zinc-800 mb-6 flex items-center justify-center group">
                 
                 <!-- Substitua o 'src' abaixo pelas imagens dos seus mutantes -->
-                <img src="
+                <img src="https://placehold.co/800x450/09090b/e11d48?text=Insira+o+Print+do+Seu+Mutante+Aqui" alt="Print Evolução" class="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100">
+                
+                <!-- Setas Visuais (Decoração App-Like) -->
+                <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                    <div class="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center text-white border border-zinc-700/50">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </div>
+                    <div class="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center text-white border border-zinc-700/50">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegação de Bolinhas e Legenda -->
+            <div class="text-center mb-8">
+                <span class="text-sm font-black text-white uppercase tracking-widest block mb-4">ST FINALIZADOR PURO (180%+)</span>
+                <div class="flex justify-center gap-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <a href="https://wa.me/5500000000000?text=Fala%20PHDA7!%20Quero%20contratar%20o%20treinamento%20de%20jogadores%20para%20minha%20conta." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-black font-black uppercase tracking-wide py-4 px-8 rounded-xl text-sm md:text-base transition-colors flex items-center gap-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    Quero treinar meus jogadores
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LABORATÓRIO 180% (MANTIDO INTACTO DA SUA ESTRUTURA ANTERIOR) -->
+    <section id="calculadora" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
+        <div class="text-center mb-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold">Matriz Oficial</span>
+            <h2 class="text-3xl font-black mt-2">🧮 Motor de <span class="text-crimson">Cálculo F2P</span></h2>
+        </div>
+
+        <div class="card-premium rounded-2xl p-6 md:p-8 border-zinc-800">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <!-- Esquerda: Inputs -->
+                <div class="space-y-5">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Posição</label>
+                            <select id="r180-pos" onchange="atualizarExercicio180(true)" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-crimson outline-none cursor-pointer">
+                                <option value="ST">ST (Atacante)</option>
+                                <option value="AML">AML / AMR (Pontas)</option>
+                                <option value="AMC">AMC (Meia Ofensivo)</option>
+                                <option value="MC">MC (Meia Central)</option>
+                                <option value="DMC">DMC (Volante)</option>
+                                <option value="DC">DC (Zagueiro)</option>
+                                <option value="DL">DL / DR (Laterais)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-300 uppercase tracking-wide mb-2">Exercício</label>
+                            <select id="r180-drill" onchange="atualizarExercicio180(false)" class="w-full bg-carbon border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:border-crimson outline-none cursor-pointer"></select>
+                        </div>
+                    </div>
+
+                    <div class="bg-carbon border border-zinc-800 rounded-xl p-5">
+                        <div class="flex justify-between items-center mb-4 border-b border-zinc-800 pb-2">
+                            <span class="text-xs font-bold text-zinc-300 uppercase">Porcentagem dos Atributos (%)</span>
+                            <button onclick="preencherExemploMutante()" class="text-[10px] text-gold hover:text-amber-400 font-bold uppercase tracking-wide">
+                                ⚡ Simular Mutante
+                            </button>
+                        </div>
+                        <div id="r180-inputs" class="grid grid-cols-2 gap-3"></div>
+                    </div>
+                </div>
+
+                <!-- Direita: Output -->
+                <div class="bg-carbon border border-zinc-800 rounded-xl p-6 flex flex-col h-full">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-center border-b border-zinc-800 pb-3 mb-5">
+                            <span class="text-xs font-bold text-zinc-400 uppercase tracking-wide">Desempenho da Média</span>
+                            <span id="r180-status" class="bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider">CALCULANDO</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-card p-4 rounded-xl border border-zinc-800">
+                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide mb-1 block">Média do Exercício</span>
+                                <span id="r180-media" class="text-3xl font-black text-white">0.0%</span>
+                            </div>
+                            <div class="bg-card p-4 rounded-xl border border-zinc-800">
+                                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wide mb-1 block">Teto (Atributo Branco)</span>
+                                <span id="r180-teto" class="text-3xl font-black text-gold">~ 0%</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <div class="flex justify-between text-[11px] font-bold uppercase tracking-wide mb-2">
+                                <span class="text-zinc-500">Progresso até Falha do Motor (180%)</span>
+                                <span id="r180-margem" class="text-emerald-400">0%</span>
+                            </div>
+                            <div class="w-full bg-zinc-900 h-3 rounded-full overflow-hidden border border-zinc-800">
+                                <div id="r180-bar" class="bg-crimson h-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MONTRA DE CONTAS -->
+    <section id="contas" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-black mb-3">💼 Contas de <span class="text-gold">Recursos</span></h2>
+            <p class="text-zinc-400 text-sm">Contas estruturadas, prontas para dominar o Dia 28 e a Divisão Suprema.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- CONTA 1 -->
+            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
+                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+                    <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-black text-xl uppercase tracking-wide">FODEUGUITO</h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">68</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">10.500</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">1.801</strong></div>
+                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    </div>
+                    <div class="mt-auto pt-4 flex items-center justify-between">
+                        <div class="text-2xl font-black text-white">R$ 400</div>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTA 2 -->
+            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition border-crimson/30 shadow-glow-red md:-translate-y-2">
+                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+                    <img src="https://placehold.co/600x400/09090b/e11d48?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
+                    <span class="absolute top-3 left-3 bg-crimson text-[10px] font-bold px-2 py-1 rounded text-white z-10 uppercase tracking-widest">Mais Vendida</span>
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-black text-xl uppercase tracking-wide text-crimson">DRAGÃO</h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">60</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">8.282</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">448</strong></div>
+                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    </div>
+                    <div class="mt-auto pt-4 flex items-center justify-between">
+                        <div class="text-2xl font-black text-white">R$ 300</div>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="bg-crimson hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTA 3 -->
+            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
+                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+                    <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-black text-xl uppercase tracking-wide">QARABAG</h3>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">33</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">4.500</strong></div>
+                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">200</strong></div>
+                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    </div>
+                    <div class="mt-auto pt-4 flex items-center justify-between">
+                        <div class="text-2xl font-black text-white">R$ 200</div>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MATRIZ DE SERVIÇOS -->
+    <section id="planos" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-black mb-3">⚙️ Planos de <span class="text-crimson">Coleta Automática</span></h2>
+            <p class="text-zinc-400 text-sm">Compare os planos e deixe o farm diário com o Sindicato FC.</p>
+        </div>
+        <div class="card-premium rounded-2xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-zinc-400 plan-table">
+                    <thead class="text-xs uppercase bg-zinc-900/80 text-zinc-300">
+                        <tr>
+                            <th scope="col" class="py-5 font-black">Recurso / Serviço Diário</th>
+                            <th scope="col" class="text-center">BASIC</th>
+                            <th scope="col" class="text-center">PRO</th>
+                            <th scope="col" class="text-center">PRIME</th>
+                            <th scope="col" class="text-center bg-crimson/10 text-crimson font-black rounded-t-lg">
+                                <span class="block">FULL SINDICATO</span>
+                                <span class="text-[9px] bg-crimson text-white px-2 py-0.5 rounded-full mt-1 inline-block">Mais Completo</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Check-in Diário</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Recolha de Maletas Verdes (+25/dia)</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <tr class="border-b border-zinc-800">
+                            <td class="font-medium text-left text-zinc-300">Evento Drop Ball (Pontos de Classe)</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td class="text-zinc-700">✕</td>
+                            <td><span class="text-emerald-500 font-bold">✓</span></td>
+                            <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
+                        </tr>
+                        <!-- Linha dos Botões -->
+                        <tr>
+                            <td></td>
+                            <td class="py-4 px-2">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20Basic" class="block w-full border border-zinc-600 text-zinc-300 hover:text-white hover:bg-zinc-800 font-bold text-xs py-2 rounded transition text-center">Contratar BASIC</a>
+                            </td>
+                            <td class="py-4 px-2">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20Pro" class="block w-full border border-zinc-600 text-zinc-300 hover:text-white hover:bg-zinc-800 font-bold text-xs py-2 rounded transition text-center">Contratar PRO</a>
+                            </td>
+                            <td class="py-4 px-2">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20Prime" class="block w-full border border-zinc-600 text-zinc-300 hover:text-white hover:bg-zinc-800 font-bold text-xs py-2 rounded transition text-center">Contratar PRIME</a>
+                            </td>
+                            <td class="py-4 px-2 bg-crimson/5">
+                                <a href="https://wa.me/5500000000000?text=Quero%20o%20Plano%20FULL" class="block w-full bg-crimson hover:bg-red-700 text-white font-bold text-xs py-2 rounded shadow-glow-red transition text-center">Contratar FULL</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-carbon py-10 text-center text-zinc-500 border-t border-zinc-900 mt-10">
+        <p class="font-bold text-zinc-400 mb-2 uppercase tracking-widest text-xs">Sindicato FC LAB | Prancheta PHDA7</p>
+        <p class="text-sm">Matemática e Engenharia Reversa para Top Eleven.</p>
+    </footer>
+
+    <!-- SCRIPT DO LABORATÓRIO -->
+    <script>
+        const DRILLS_DB = [
+            { id: 1, nome: "Marcar Homem a Homem", attrs: ["Corte", "Drible", "Finalização"] },
+            { id: 2, nome: "Passe, vá e dispare", attrs: ["Velocidade", "Passe", "Chute"] },
+            { id: 6, nome: "Jogada na ponta", attrs: ["Cabeçada", "Cruzamento", "Chute", "Finalização"] },
+            { id: 7, nome: "Contra-ataque Rápido", attrs: ["Criatividade", "Passe", "Cruzamento", "Finalização"] },
+            { id: 10, nome: "Uma linha de defesa", attrs: ["Marcação", "Posicionamento"] },
+            { id: 11, nome: "Parar o atacante", attrs: ["Força", "Corte", "Marcação", "Coragem", "Drible"] },
+            { id: 12, nome: "Cruzamento de Defesa", attrs: ["Marcação", "Cabeçada", "Coragem", "Cruzamento"] },
+            { id: 28, nome: "Academia", attrs: ["Condicionamento", "Força"] }
+        ];
+
+        const WHITE_ATTRS = {
+            "ST": ["Força", "Velocidade", "Criatividade", "Posicionamento", "Cabeçada", "Passe", "Drible", "Chute", "Finalização"],
+            "AML": ["Condicionamento", "Velocidade", "Criatividade", "Passe", "Drible", "Cruzamento", "Chute", "Finalização"],
+            "AMC": ["Condicionamento", "Velocidade", "Criatividade", "Cabeçada", "Passe", "Drible", "Chute", "Finalização"],
+            "MC": ["Condicionamento", "Velocidade", "Criatividade", "Corte", "Marcação", "Posicionamento", "Coragem", "Passe", "Drible", "Chute"],
+            "DMC": ["Condicionamento", "Força", "Agressividade", "Criatividade", "Corte", "Marcação", "Posicionamento", "Cabeçada", "Coragem", "Passe"],
+            "DC": ["Condicionamento", "Força", "Agressividade", "Corte", "Marcação", "Posicionamento", "Cabeçada", "Coragem"],
+            "DL": ["Condicionamento", "Agressividade", "Velocidade", "Corte", "Marcação", "Posicionamento", "Coragem", "Cruzamento"]
+        };
+
+        function inicializarSelectDrills() {
+            const select = document.getElementById('r180-drill');
+            select.innerHTML = '';
+            DRILLS_DB.forEach(d => {
+                const opt = document.createElement('option');
+                opt.value = d.id;
+                opt.text = d.nome;
+                select.appendChild(opt);
+            });
+            atualizarExercicio180(true);
+        }
+
+        function atualizarExercicio180() {
+            const pos = document.getElementById('r180-pos').value;
+            const selectDrill = document.getElementById('r180-drill');
+            const drillId = parseInt(selectDrill.value);
+            const drill = DRILLS_DB.find(d => d.id === drillId) || DRILLS_DB[0];
+            const brancosPos = WHITE_ATTRS[pos] || [];
+            
+            const container = document.getElementById('r180-inputs');
+            container.innerHTML = '';
+
+            drill.attrs.forEach(attr => {
+                const isWhite = brancosPos.includes(attr);
+                const defaultVal = isWhite ? 120 : 20;
+                const badgeColor = isWhite ? "text-emerald-400 border-emerald-500/40 bg-emerald-500/10" : "text-zinc-400 border-zinc-700 bg-zinc-800/60";
+                
+                const div = document.createElement('div');
+                div.className = "bg-card p-3 rounded-xl border border-zinc-800 focus-within:border-zinc-500 transition-colors";
+                div.innerHTML = `
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-white">${attr}</span>
+                        <span class="text-[9px] font-black px-1.5 py-0.5 rounded border ${badgeColor}">${isWhite ? 'BRANCO 1.8x' : 'CINZA 1.0x'}</span>
+                    </div>
+                    <div class="relative">
+                        <input type="number" data-white="${isWhite}" value="${defaultVal}" min="1" max="350" oninput="calcularMediaExercicio()"
+                               class="r180-attr-input w-full bg-carbon border border-zinc-700 rounded-lg px-3 py-2 pr-6 text-sm font-bold text-white focus:border-crimson outline-none">
+                        <span class="absolute right-2 top-2 text-xs text-zinc-500 pointer-events-none">%</span>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+            calcularMediaExercicio();
+        }
+
+        function preencherExemploMutante() {
+            document.querySelectorAll('.r180-attr-input').forEach(inp => {
+                inp.value = inp.getAttribute('data-white') === 'true' ? 240 : 1;
+            });
+            calcularMediaExercicio();
+        }
+
+        function calcularMediaExercicio() {
+            const inputs = document.querySelectorAll('.r180-attr-input');
+            let soma = 0, qtdBrancos = 0, somaCinzas = 0, qtdCinzas = 0;
+
+            inputs.forEach(inp => {
+                const val = parseFloat(inp.value) || 0;
+                soma += val;
+                if(inp.getAttribute('data-white') === 'true') { qtdBrancos++; }
+                else { qtdCinzas++; somaCinzas += val; }
+            });
+
+            const total = inputs.length;
+            const media = soma / total;
+
+            let tetoBranco = 180;
+            if (qtdBrancos > 0) {
+                tetoBranco = Math.round(((180 * total) - somaCinzas) / qtdBrancos);
+            }
+
+            document.getElementById('r180-media').innerText = `${media.toFixed(1)}%`;
+            document.getElementById('r180-teto').innerText = qtdBrancos > 0 ? `~ ${Math.max(180, tetoBranco)}%` : "100% Cinza";
+            
+            const bar = document.getElementById('r180-bar');
+            bar.style.width = `${Math.min(100, (media / 180) * 100)}%`;
+
+            const status = document.getElementById('r180-status');
+            const margemEl = document.getElementById('r180-margem');
+
+            if (media >= 180) {
+                status.innerText = "TRAVADO (≥180%)";
+                status.className = "bg-crimson text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
+                bar.className = "bg-crimson h-full transition-all duration-300 shadow-[0_0_10px_rgba(225,29,72,0.8)]";
+                margemEl.innerText = "0% (Ganho +1)";
+                margemEl.className = "text-crimson font-bold";
+            } else {
+                status.innerText = "XP LIBERADO";
+                status.className = "bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
+                bar.className = "bg-emerald-500 h-full transition-all duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]";
+                margemEl.innerText = `Restam +${Math.max(0, 180 - media).toFixed(1)}%`;
+                margemEl.className = "text-emerald-400 font-bold";
+            }
+        }
+
+        window.onload = inicializarSelectDrills;
+    </script>
+</body>
+</html>
