@@ -316,7 +316,7 @@
     <section id="planos" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
         <div class="text-center mb-10">
             <h2 class="text-3xl font-black mb-3">⚙️ Planos de <span class="text-crimson">Coleta Automática</span></h2>
-            <p class="text-zinc-400 text-sm">Compare os planos e deixe o farm diário com o Sindicato FC.</p>
+            <p class="text-zinc-400 text-sm">Compare os planos e deixe a coleta diária com o Sindicato FC Lab.</p>
         </div>
         <div class="card-premium rounded-2xl overflow-hidden border-zinc-800">
             <div class="overflow-x-auto">
@@ -342,28 +342,28 @@
                             <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
                         </tr>
                         <tr class="border-b border-zinc-800/50">
-                            <td class="font-medium text-left text-zinc-300">Daily Streak (Bónus Consecutivo)</td>
+                            <td class="font-medium text-left text-zinc-300">Daily Streak</td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
                         </tr>
                         <tr class="border-b border-zinc-800/50">
-                            <td class="font-medium text-left text-zinc-300">Recolha de Maletas Verdes (+25/dia)</td>
+                            <td class="font-medium text-left text-zinc-300">Recolhimento de Maletas Verdes (+25/dia)</td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
                         </tr>
                         <tr class="border-b border-zinc-800/50">
-                            <td class="font-medium text-left text-zinc-300">Maletas Extras de Eventos</td>
+                            <td class="font-medium text-left text-zinc-300">Recolhimento de Maletas Extras</td>
                             <td class="text-zinc-700">✕</td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
                         </tr>
                         <tr class="border-b border-zinc-800/50">
-                            <td class="font-medium text-left text-zinc-300">Farm de Livros de Treino</td>
+                            <td class="font-medium text-left text-zinc-300">Livros de treino</td>
                             <td class="text-zinc-700">✕</td>
                             <td class="text-zinc-700">✕</td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
@@ -384,7 +384,7 @@
                             <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
                         </tr>
                         <tr class="border-b border-zinc-800/50">
-                            <td class="font-medium text-left text-zinc-300">Coletas do Campus da Juventude</td>
+                            <td class="font-medium text-left text-zinc-300">Coletas do Campus</td>
                             <td class="text-zinc-700">✕</td>
                             <td class="text-zinc-700">✕</td>
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
@@ -539,6 +539,33 @@
                 status.className = "bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
                 bar.className = "bg-emerald-500 h-full transition-all duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]";
                 margemEl.innerText = `Restam +${Math.max(0, 180 - media).toFixed(1)}%`;
+                margemEl.className = "text-emerald-400 font-bold";
+            }
+        }
+
+            document.getElementById('r180-media').innerText = `${media.toFixed(1)}%`;
+            document.getElementById('r180-teto').innerText = qtdBrancos > 0 ? `~ ${Math.max(180, tetoBranco)}%` : "100% Cinza";
+            
+            const bar = document.getElementById('r180-bar');
+            bar.style.width = `${Math.min(100, (media / 180) * 100)}%`;
+
+            const status = document.getElementById('r180-status');
+            const margemEl = document.getElementById('r180-margem');
+
+            if (media >= 180) {
+                status.innerText = "TRAVADO (≥180%)";
+                status.className = "bg-crimson text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
+                bar.className = "bg-crimson h-full transition-all duration-300 shadow-[0_0_10px_rgba(225,29,72,0.8)]";
+                margemEl.innerText = "0% (Ganho +1)";
+                margemEl.className = "text-crimson font-bold";
+} else {
+                status.innerText = "XP LIBERADO";
+                status.className = "bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
+                bar.className = "bg-emerald-500 h-full transition-all duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]";
+                
+                // LINHA CORRIGIDA ABAIXO (Adicionado o sinal de menos e removida a quebra de linha)
+                margemEl.innerText = `Restam +${Math.max(0, 180 - media).toFixed(1)}%`;
+                
                 margemEl.className = "text-emerald-400 font-bold";
             }
         }
