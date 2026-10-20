@@ -8,6 +8,24 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <meta name="theme-color" content="#09090b">
 
+    <!-- Google tag (gtag.js) - GA4 (Substitua G-SEUIDAQUI pelo seu ID real) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEUIDAQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEUIDAQUI');
+    </script>
+
+    <!-- Microsoft Clarity (Substitua SEU_ID_DO_CLARITY_AQUI pelo seu ID real) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "SEU_ID_DO_CLARITY_AQUI");
+    </script>
+
     <!-- Tailwind CSS & Fontes -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -77,7 +95,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (SPIN SELLING - O PROBLEMA) -->
+    <!-- HERO SECTION -->
     <section class="relative overflow-hidden py-16 px-4 text-center border-b border-zinc-900/50">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-crimson/10 blur-[120px] rounded-full pointer-events-none"></div>
         
@@ -104,7 +122,7 @@
         </div>
     </section>
 
-    <!-- TREINAMENTO DE JOGADORES (PORTFÓLIO) -->
+    <!-- TREINAMENTO DE JOGADORES -->
     <section id="treinamento" class="py-16 px-4 max-w-5xl mx-auto border-b border-zinc-900/50">
         <div class="text-center mb-10">
             <h2 class="text-3xl md:text-4xl font-black mb-4">Treinamento de <span class="text-crimson">Jogadores</span></h2>
@@ -121,7 +139,6 @@
 
         <div class="card-premium rounded-2xl p-4 md:p-6 shadow-glow-red border-crimson/30 max-w-4xl mx-auto">
             <div class="relative w-full aspect-video bg-carbon rounded-xl overflow-hidden border border-zinc-800 mb-6 flex items-center justify-center group">
-                <!-- Substitua a imagem abaixo pela do seu Diomandé, Vlahović, etc. -->
                 <img src="https://placehold.co/800x450/09090b/e11d48?text=Insira+o+Print+do+Mutante+Aqui" alt="Print Evolução" class="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100">
                 <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
                     <div class="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center text-white border border-zinc-700/50"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></div>
@@ -216,7 +233,6 @@
                         </div>
                     </div>
 
-                    <!-- ISCO DE CONVERSÃO (SPIN SELLING - A IMPLICAÇÃO) -->
                     <div class="mt-4 bg-carbon border border-crimson/30 rounded-xl p-5 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-crimson/10 rounded-full blur-[30px] pointer-events-none"></div>
                         <h4 class="text-sm font-black text-white uppercase tracking-wide mb-2">A Matemática Não Tem Piedade</h4>
@@ -232,7 +248,7 @@
         </div>
     </section>
 
-    <!-- MONTRA DE CONTAS (SPIN SELLING - A SOLUÇÃO) -->
+    <!-- MONTRA DE CONTAS -->
     <section id="contas" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
         <div class="text-center mb-10">
             <span class="text-xs font-bold uppercase tracking-widest text-gold">Fundação de Elite</span>
@@ -243,6 +259,7 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
+            <!-- Iniciante -->
             <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
                 <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
                     <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
@@ -265,6 +282,7 @@
                 </div>
             </div>
 
+            <!-- Elite F2P -->
             <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition border-crimson/30 shadow-glow-red md:-translate-y-2">
                 <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
                     <img src="https://placehold.co/600x400/09090b/e11d48?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
@@ -288,6 +306,7 @@
                 </div>
             </div>
 
+            <!-- Suprema -->
             <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
                 <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
                     <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
@@ -312,7 +331,7 @@
         </div>
     </section>
 
-    <!-- MATRIZ DE PLANOS (COLETA AUTOMÁTICA RESTAURADA) -->
+    <!-- MATRIZ DE PLANOS -->
     <section id="planos" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
         <div class="text-center mb-10">
             <h2 class="text-3xl font-black mb-3">⚙️ Planos de <span class="text-crimson">Coleta Automática</span></h2>
@@ -397,7 +416,6 @@
                             <td><span class="text-emerald-500 font-bold">✓</span></td>
                             <td class="bg-crimson/5"><span class="text-crimson font-bold">✓</span></td>
                         </tr>
-                        <!-- Linha dos Botões de Conversão -->
                         <tr>
                             <td></td>
                             <td class="py-5 px-3">
@@ -539,33 +557,6 @@
                 status.className = "bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
                 bar.className = "bg-emerald-500 h-full transition-all duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]";
                 margemEl.innerText = `Restam +${Math.max(0, 180 - media).toFixed(1)}%`;
-                margemEl.className = "text-emerald-400 font-bold";
-            }
-        }
-
-            document.getElementById('r180-media').innerText = `${media.toFixed(1)}%`;
-            document.getElementById('r180-teto').innerText = qtdBrancos > 0 ? `~ ${Math.max(180, tetoBranco)}%` : "100% Cinza";
-            
-            const bar = document.getElementById('r180-bar');
-            bar.style.width = `${Math.min(100, (media / 180) * 100)}%`;
-
-            const status = document.getElementById('r180-status');
-            const margemEl = document.getElementById('r180-margem');
-
-            if (media >= 180) {
-                status.innerText = "TRAVADO (≥180%)";
-                status.className = "bg-crimson text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
-                bar.className = "bg-crimson h-full transition-all duration-300 shadow-[0_0_10px_rgba(225,29,72,0.8)]";
-                margemEl.innerText = "0% (Ganho +1)";
-                margemEl.className = "text-crimson font-bold";
-} else {
-                status.innerText = "XP LIBERADO";
-                status.className = "bg-emerald-500/20 text-emerald-400 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider";
-                bar.className = "bg-emerald-500 h-full transition-all duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]";
-                
-                // LINHA CORRIGIDA ABAIXO (Adicionado o sinal de menos e removida a quebra de linha)
-                margemEl.innerText = `Restam +${Math.max(0, 180 - media).toFixed(1)}%`;
-                
                 margemEl.className = "text-emerald-400 font-bold";
             }
         }
