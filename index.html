@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prancheta do PHDA7 | Sindicato FC LAB</title>
+    <title>Sindicato FC LAB | A Engenharia F2P Aplicada</title>
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <meta name="theme-color" content="#09090b">
 
-    <!-- Google tag (gtag.js) - GA4 (Substitua G-SEUIDAQUI pelo seu ID real) -->
+    <!-- Google tag (gtag.js) - GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEUIDAQUI"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,7 +17,7 @@
       gtag('config', 'G-SEUIDAQUI');
     </script>
 
-    <!-- Microsoft Clarity (Substitua SEU_ID_DO_CLARITY_AQUI pelo seu ID real) -->
+    <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -62,13 +62,13 @@
         input[type="number"], select, input[type="text"] { transition: all 0.2s ease; }
         input[type="number"]:focus, select:focus, input[type="text"]:focus { box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.2); }
         
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #09090b; }
-        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+        /* Ocultar barra de scroll no carrossel horizontal */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         .plan-table th, .plan-table td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .plan-table tr:hover { background-color: rgba(255,255,255,0.02); }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="antialiased selection:bg-crimson selection:text-white">
@@ -79,15 +79,15 @@
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full border border-gold/60 bg-zinc-900 flex items-center justify-center font-black text-gold shadow-glow-gold">S</div>
                 <div>
-                    <span class="font-black tracking-tight text-white text-lg">PRANCHETA <span class="text-crimson">PHDA7</span></span>
-                    <span class="block text-[10px] uppercase tracking-widest text-gold font-semibold">Sindicato FC LAB</span>
+                    <span class="font-black tracking-tight text-white text-lg">SINDICATO FC <span class="text-crimson">LAB</span></span>
+                    <span class="block text-[10px] uppercase tracking-widest text-zinc-500 font-semibold">By <span class="text-gold">Prancheta do PHDA7</span></span>
                 </div>
             </div>
             <div class="flex items-center gap-4">
+                <a href="#faq" class="hidden md:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">DÚVIDAS</a>
+                <a href="#servicos" class="hidden lg:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">SERVIÇOS</a>
                 <a href="#calculadora" class="hidden md:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">LABORATÓRIO</a>
-                <a href="#treinamento" class="hidden md:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">TREINAMENTO</a>
                 <a href="#contas" class="hidden sm:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">CONTAS</a>
-                <a href="#planos" class="hidden sm:inline-block text-zinc-400 hover:text-white text-xs font-bold transition-colors">COLETA</a>
                 <a href="https://wa.me/5500000000000" target="_blank" class="bg-crimson hover:bg-red-700 text-white shadow-glow-red text-xs font-bold px-4 py-2 rounded-lg transition-colors">
                     Falar no WhatsApp
                 </a>
@@ -100,65 +100,144 @@
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-crimson/10 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div class="max-w-4xl mx-auto relative z-10">
-            <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider shadow-glow-gold">
-                Engenharia F2P Aplicada
+            <!-- Chancela de Autoridade (Slogan) -->
+            <span class="inline-block border border-gold/40 bg-gold/10 text-gold text-xs font-bold px-5 py-2 rounded-full mb-6 tracking-wide shadow-glow-gold">
+                A execução oficial das técnicas da <strong class="uppercase font-black text-white">Prancheta do PHDA7</strong>.
             </span>
+            
             <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
-                O jogo foi programado para você falhar.<br>
-                <span class="gradient-text">Nós hackeamos a matemática.</span>
+                A Engenharia F2P <br>
+                <span class="gradient-text">Aplicada na Prática.</span>
             </h1>
+            
             <p class="text-zinc-400 text-sm md:text-base mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                Enquanto o servidor queima maletas treinando garotos de 18 anos, o Sindicato FC domina a Divisão Suprema. Pare de jogar pela intuição. Use a nossa prancheta, isole os atributos a 1% e quebre o teto dos 180%.
+                Você desenha a tática. Nós assumimos a rotina. Contrate o <strong>Sindicato FC Lab</strong> para a gestão diária de recursos e engenharia de mutantes para a sua conta de Top Eleven.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#calculadora" class="bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold px-8 py-4 rounded-xl transition-all">
                     🧮 Acessar Motor de Cálculo
                 </a>
-                <a href="#treinamento" class="bg-crimson hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl transition-all shadow-glow-red">
-                    ⚡ Ver Mutantes da Prancheta
+                <a href="#servicos" class="bg-crimson hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl transition-all shadow-glow-red">
+                    ⚡ Ver Nossos Serviços
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- TREINAMENTO DE JOGADORES -->
-    <section id="treinamento" class="py-16 px-4 max-w-5xl mx-auto border-b border-zinc-900/50">
+    <!-- FAQ / PERGUNTAS FREQUENTES -->
+    <section id="faq" class="py-16 px-4 max-w-4xl mx-auto border-b border-zinc-900/50">
         <div class="text-center mb-10">
-            <h2 class="text-3xl md:text-4xl font-black mb-4">Treinamento de <span class="text-crimson">Jogadores</span></h2>
-            <p class="text-zinc-400 text-sm max-w-2xl mx-auto mb-6">Acelere a evolução dos seus jogadores no Top Eleven de forma cirúrgica. Nosso serviço permite comprar evolução direta para seus atletas, aplicando a quebra da Regra dos 180% para garantir atributos brancos massivos.</p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 text-xs font-bold text-zinc-300 mb-6">
-                <span class="flex items-center justify-center gap-2"><span class="text-emerald-500 text-base">✔</span> Engenharia aos 21 anos (Idade de Ouro)</span>
-                <span class="flex items-center justify-center gap-2"><span class="text-emerald-500 text-base">✔</span> Evolução comprovada com prints</span>
-                <span class="flex items-center justify-center gap-2"><span class="text-emerald-500 text-base">✔</span> Atributos cinzas travados (1%)</span>
-            </div>
-            
-            <p class="text-xs text-gold font-medium">Quanto maior a evolução desejada (GRL Meta), maior será o investimento.</p>
+            <span class="text-xs font-bold uppercase tracking-widest text-crimson">Tudo o que precisa saber</span>
+            <h2 class="text-3xl font-black mt-2 mb-4">Perguntas <span class="text-white">Frequentes</span></h2>
+            <p class="text-zinc-400 text-sm max-w-2xl mx-auto">
+                Transparência e resultados. Entenda como funciona a nossa prestação de serviços, os prazos de entrega e as formas de pagamento.
+            </p>
         </div>
 
-        <div class="card-premium rounded-2xl p-4 md:p-6 shadow-glow-red border-crimson/30 max-w-4xl mx-auto">
-            <div class="relative w-full aspect-video bg-carbon rounded-xl overflow-hidden border border-zinc-800 mb-6 flex items-center justify-center group">
-                <img src="https://placehold.co/800x450/09090b/e11d48?text=Insira+o+Print+do+Mutante+Aqui" alt="Print Evolução" class="w-full h-full object-cover opacity-90 transition-opacity group-hover:opacity-100">
-                <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
-                    <div class="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center text-white border border-zinc-700/50"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></div>
-                    <div class="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center text-white border border-zinc-700/50"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></div>
+        <div class="space-y-4">
+            <details class="group bg-card border border-zinc-800 rounded-xl p-5 cursor-pointer open:border-crimson/50 transition-all shadow-sm">
+                <summary class="font-bold text-white uppercase tracking-wide flex justify-between items-center outline-none list-none text-sm md:text-base">
+                    <span class="flex items-center gap-3"><span class="text-xl">🤝</span> Como funciona a contratação dos planos?</span>
+                    <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="text-zinc-400 text-sm mt-4 leading-relaxed border-t border-zinc-800/80 pt-4">
+                    Basta escolher o plano que melhor atende suas necessidades e entrar em contato pelo WhatsApp. Eu explico todos os detalhes, valores e prazos. Após a confirmação do pagamento, inicio a execução imediatamente.
                 </div>
+            </details>
+
+            <details class="group bg-card border border-zinc-800 rounded-xl p-5 cursor-pointer open:border-crimson/50 transition-all shadow-sm">
+                <summary class="font-bold text-white uppercase tracking-wide flex justify-between items-center outline-none list-none text-sm md:text-base">
+                    <span class="flex items-center gap-3"><span class="text-xl">⏱️</span> Quanto tempo demora a entrega e execução?</span>
+                    <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="text-zinc-400 text-sm mt-4 leading-relaxed border-t border-zinc-800/80 pt-4">
+                    Depende do serviço contratado. Planos de coleta começam no mesmo dia da contratação. Treinamento de jogadores pode levar de 3 a 14 dias dependendo do nível de evolução desejado.
+                </div>
+            </details>
+
+            <details class="group bg-card border border-zinc-800 rounded-xl p-5 cursor-pointer open:border-crimson/50 transition-all shadow-sm">
+                <summary class="font-bold text-white uppercase tracking-wide flex justify-between items-center outline-none list-none text-sm md:text-base">
+                    <span class="flex items-center gap-3"><span class="text-xl">🛒</span> Posso contratar algo avulso?</span>
+                    <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="text-zinc-400 text-sm mt-4 leading-relaxed border-t border-zinc-800/80 pt-4">
+                    Sim! Você pode contratar serviços específicos como treinamento de jogadores ou coletas pontuais sem precisar assinar um plano mensal. Entre em contato pelo WhatsApp para discutirmos a sua necessidade.
+                </div>
+            </details>
+
+            <details class="group bg-card border border-zinc-800 rounded-xl p-5 cursor-pointer open:border-crimson/50 transition-all shadow-sm">
+                <summary class="font-bold text-white uppercase tracking-wide flex justify-between items-center outline-none list-none text-sm md:text-base">
+                    <span class="flex items-center gap-3"><span class="text-xl">⚡</span> Como funciona o Treinamento de Jogadores?</span>
+                    <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="text-zinc-400 text-sm mt-4 leading-relaxed border-t border-zinc-800/80 pt-4">
+                    O valor é baseado no percentual (%) de evolução do jogador. Eu treino seus jogadores de forma otimizada para alcançar o máximo de evolução no menor tempo possível, com resultados comprovados por capturas de tela.
+                </div>
+            </details>
+
+            <details class="group bg-card border border-zinc-800 rounded-xl p-5 cursor-pointer open:border-crimson/50 transition-all shadow-sm">
+                <summary class="font-bold text-white uppercase tracking-wide flex justify-between items-center outline-none list-none text-sm md:text-base">
+                    <span class="flex items-center gap-3"><span class="text-xl">🔒</span> Compra de conta: como você garante a transparência?</span>
+                    <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="text-zinc-400 text-sm mt-4 leading-relaxed border-t border-zinc-800/80 pt-4">
+                    Todas as contas são virgens e documentadas com capturas de tela detalhadas. Você recebe acesso completo após a confirmação do pagamento, com suporte durante a transição. Processo totalmente transparente com comunicação constante.
+                </div>
+            </details>
+
+            <details class="group bg-card border border-zinc-800 rounded-xl p-5 cursor-pointer open:border-crimson/50 transition-all shadow-sm">
+                <summary class="font-bold text-white uppercase tracking-wide flex justify-between items-center outline-none list-none text-sm md:text-base">
+                    <span class="flex items-center gap-3"><span class="text-xl">💳</span> Quais as formas de pagamento?</span>
+                    <svg class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="text-zinc-400 text-sm mt-4 leading-relaxed border-t border-zinc-800/80 pt-4">
+                    Aceito Pix, transferência bancária e outros métodos combinados diretamente. O pagamento é feito de forma segura e transparente.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS DO LABORATÓRIO (ASSESSORIA) -->
+    <section id="servicos" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold">Assessoria Premium</span>
+            <h2 class="text-3xl font-black mt-2 mb-3">Serviços do <span class="text-white">Laboratório</span></h2>
+            <p class="text-zinc-400 text-sm max-w-2xl mx-auto">
+                Não quer comprar uma conta nova? Nós assumimos o trabalho duro na sua conta atual. Escolha a nossa assessoria em gestão de recursos ou engenharia de treinamento.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- PACOTE TRATOR -->
+            <div class="card-premium relative rounded-2xl overflow-hidden p-8 border border-emerald-500/30 hover:border-emerald-500/60 shadow-[0_0_30px_-5px_rgba(16,185,129,0.15)] transition-all flex flex-col group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-[40px] pointer-events-none transition-all group-hover:bg-emerald-500/20"></div>
+                <div class="mb-6 relative z-10">
+                    <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-emerald-500/30">Gestão Diária de Recursos</span>
+                    <h3 class="text-2xl font-black text-white mt-5 uppercase tracking-wide">Pacote Trator</h3>
+                    <div class="text-emerald-400 font-black text-3xl mt-2">R$ 59,90 <span class="text-sm text-zinc-500 font-medium tracking-normal">/ mês</span></div>
+                </div>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-8 flex-1 relative z-10">
+                    A Nordeus cobra cerca de R$ 380,00 por pacotes de descanso na loja oficial. O Sindicato FC Lab injeta centenas de maletas verdes no seu cofre durante um mês por apenas R$ 59,90. O seu tempo vale ouro. Assuma a tática e aproveite o seu fim de semana, e deixe a rotina diária de coleta de recursos por nossa conta, de segunda a sexta-feira.
+                </p>
+                <a href="https://wa.me/5500000000000?text=Quero%20contratar%20o%20Pacote%20Trator" target="_blank" class="relative z-10 w-full text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl text-sm transition-colors shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                    Quero Contratar (WhatsApp)
+                </a>
             </div>
 
-            <div class="text-center mb-8">
-                <span class="text-sm font-black text-white uppercase tracking-widest block mb-4">ST FINALIZADOR PURO (180%+)</span>
-                <div class="flex justify-center gap-2">
-                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+            <!-- PACOTE MUTANTE -->
+            <div class="card-premium relative rounded-2xl overflow-hidden p-8 border border-crimson/30 hover:border-crimson/60 shadow-glow-red transition-all flex flex-col group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-crimson/10 rounded-full blur-[40px] pointer-events-none transition-all group-hover:bg-crimson/20"></div>
+                <div class="mb-6 relative z-10">
+                    <span class="bg-crimson/20 text-crimson text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-crimson/30">Engenharia de Treinamento</span>
+                    <h3 class="text-2xl font-black text-white mt-5 uppercase tracking-wide">Pacote Mutante</h3>
+                    <div class="text-crimson font-black text-3xl mt-2">R$ 89,90 <span class="text-sm text-zinc-500 font-medium tracking-normal">/ por jogador evoluído</span></div>
                 </div>
-            </div>
-
-            <div class="flex justify-center">
-                <a href="https://wa.me/5500000000000?text=Fala%20PHDA7!%20Quero%20contratar%20o%20treinamento%20de%20jogadores%20para%20minha%20conta." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-black font-black uppercase tracking-wide py-4 px-8 rounded-xl text-sm md:text-base transition-colors flex items-center gap-3">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                    Quero treinar meus jogadores
+                <p class="text-zinc-400 text-sm leading-relaxed mb-8 flex-1 relative z-10">
+                    Não gaste horas do seu dia clicando repetidamente em 'Treinar' e curando lesões. Você escolhe o jogador alvo e a porcentagem final desejada (ex: 180%). Nossa equipe assume a execução tática do treino, aplica a injeção cirúrgica de maletas e devolve o seu perfil com um monstro pronto para esmagar nos campeonatos!
+                </p>
+                <a href="https://wa.me/5500000000000?text=Quero%20criar%20um%20Mutante" target="_blank" class="relative z-10 w-full text-center bg-crimson hover:bg-red-600 text-white font-bold py-4 rounded-xl text-sm transition-colors shadow-glow-red">
+                    Criar um Mutante (WhatsApp)
                 </a>
             </div>
         </div>
@@ -248,86 +327,173 @@
         </div>
     </section>
 
-    <!-- MONTRA DE CONTAS -->
-    <section id="contas" class="py-16 px-4 max-w-6xl mx-auto border-b border-zinc-900/50">
-        <div class="text-center mb-10">
+    <!-- MOsTRA DE CONTAS (CARROSSEL MOBILE & ATUALIZAÇÕES DE ESTADO) -->
+  <section id="contas" class="py-16 max-w-6xl mx-auto border-b border-zinc-900/50">
+        <div class="text-center mb-10 px-4">
             <span class="text-xs font-bold uppercase tracking-widest text-gold">Fundação de Elite</span>
-            <h2 class="text-3xl font-black mt-2 mb-3">Infraestrutura <span class="text-gold">F2P</span></h2>
+            <h2 class="text-3xl font-black mt-2 mb-3">Contas <span class="text-gold">Virgens F2P</span></h2>
             <p class="text-zinc-400 text-sm max-w-2xl mx-auto">
-                Pular etapas custa caro. Não vendemos equipas, vendemos o palco pronto. Contas submetidas à Guilhotina do Dia 28, com o emparelhamento afundado cirurgicamente e milhares de maletas farmadas no automático.
+                Diferente do mercado que vende contas de nível alto com emparelhamento destruído, as nossas contas são <strong>rigorosamente Nível 1 ou 2 (Virgens)</strong>. O palco pronto para você dominar desde a primeira divisão.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Iniciante -->
-            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
-                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+        <!-- Scroll Horizontal no Mobile, Grid no Desktop -->
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 px-4 hide-scrollbar no-scrollbar lg:grid lg:grid-cols-4 md:overflow-visible md:snap-none md:pb-0 md:pt-0">
+            
+            <!-- 1. Conta Básica (Gatilho Escassez / Esgotada) -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 flex-shrink-0 snap-center card-premium rounded-2xl overflow-hidden flex flex-col transition border-zinc-800 opacity-80">
+                <div class="relative h-40 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center grayscale">
+                    <img src="https://placehold.co/600x400/09090b/4b5563?text=Print+da+Conta" class="object-cover w-full h-full opacity-40">
+                </div>
+                <div class="p-5 flex flex-col flex-1 bg-zinc-900/30">
+                    <div class="flex justify-between items-center mb-5 mt-1">
+                        <h3 class="font-black text-xl uppercase tracking-wide text-zinc-500">BÁSICA</h3>
+                        <span class="bg-zinc-800 text-zinc-500 text-[10px] uppercase font-bold px-2 py-1 rounded border border-zinc-700">Esgotado</span>
+                    </div>
+                    
+                    <!-- Lista Vertical Alinhada -->
+                    <div class="space-y-3 text-xs mb-6 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-600 flex items-center gap-2"><span class="text-sm">🏆</span> Nível:</span>
+                            <strong class="text-zinc-500">1 ou 2</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-600 flex items-center gap-2"><span class="text-sm">🧳</span> Maletas:</span>
+                            <strong class="text-zinc-500">750</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-600 flex items-center gap-2"><span class="text-sm">🪙</span> Tokens:</span>
+                            <strong class="text-zinc-500">50</strong>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-zinc-800">
+                            <span class="text-zinc-600 flex items-center gap-2"><span class="text-sm">🔑</span> Login:</span>
+                            <strong class="text-zinc-500">Facebook</strong>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-4 flex items-center justify-between">
+                        <div class="text-xl font-black text-zinc-600">R$ 80</div>
+                        <a href="https://wa.me/5500000000000?text=Quero%20reservar%20a%20próxima%20Conta%20Básica." target="_blank" class="bg-zinc-800 text-zinc-500 font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors cursor-pointer hover:bg-zinc-700">Reservar Próxima</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Conta Iniciante (Disponível) -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 flex-shrink-0 snap-center card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
+                <div class="relative h-40 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
                     <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
                 </div>
                 <div class="p-5 flex flex-col flex-1">
-                    <div class="flex justify-between items-center mb-4">
+                    <div class="flex justify-between items-center mb-5 mt-1">
                         <h3 class="font-black text-xl uppercase tracking-wide">INICIANTE</h3>
                         <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
                     </div>
-                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">68</strong></div>
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">4.500</strong></div>
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">200</strong></div>
-                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    
+                    <!-- Lista Vertical Alinhada -->
+                    <div class="space-y-3 text-xs mb-6 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🏆</span> Nível:</span>
+                            <strong class="text-white">1 ou 2</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🧳</span> Maletas:</span>
+                            <strong class="text-emerald-400">2.500</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🪙</span> Tokens:</span>
+                            <strong class="text-gold">200</strong>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-zinc-800">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🔑</span> Login:</span>
+                            <strong class="text-white">Facebook</strong>
+                        </div>
                     </div>
+
                     <div class="mt-auto pt-4 flex items-center justify-between">
                         <div class="text-2xl font-black text-white">R$ 180</div>
-                        <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Iniciante." target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WhatsApp</a>
+                        <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Iniciante." target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WA</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Elite F2P -->
-            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition border-crimson/30 shadow-glow-red md:-translate-y-2">
-                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+            <!-- 3. Conta Elite F2P (Mais Vendida) -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 flex-shrink-0 snap-center card-premium rounded-2xl overflow-hidden flex flex-col transition border-crimson/30 shadow-glow-red md:-translate-y-2 relative">
+                <div class="relative h-40 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+                    <!-- Selo corrigido (movido para dentro da imagem para não cortar) -->
+                    <span class="absolute top-3 left-1/2 -translate-x-1/2 bg-crimson text-[10px] font-black px-4 py-1.5 rounded-full text-white z-20 uppercase tracking-widest shadow-glow-red whitespace-nowrap">Mais Vendida</span>
                     <img src="https://placehold.co/600x400/09090b/e11d48?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <span class="absolute top-3 left-3 bg-crimson text-[10px] font-bold px-2 py-1 rounded text-white z-10 uppercase tracking-widest">Mais Vendida</span>
                 </div>
                 <div class="p-5 flex flex-col flex-1">
-                    <div class="flex justify-between items-center mb-4">
+                    <div class="flex justify-between items-center mb-5 mt-1">
                         <h3 class="font-black text-xl uppercase tracking-wide text-crimson">ELITE F2P</h3>
                         <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
                     </div>
-                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">60</strong></div>
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">8.200</strong></div>
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">450</strong></div>
-                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    
+                    <!-- Lista Vertical Alinhada -->
+                    <div class="space-y-3 text-xs mb-6 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🏆</span> Nível:</span>
+                            <strong class="text-white">1 ou 2</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🧳</span> Maletas:</span>
+                            <strong class="text-emerald-400">8.200</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🪙</span> Tokens:</span>
+                            <strong class="text-gold">450</strong>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-zinc-800">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🔑</span> Login:</span>
+                            <strong class="text-white">Facebook</strong>
+                        </div>
                     </div>
+
                     <div class="mt-auto pt-4 flex items-center justify-between">
                         <div class="text-2xl font-black text-white">R$ 290</div>
-                        <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Elite%20F2P." target="_blank" class="bg-crimson hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WhatsApp</a>
+                        <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Elite%20F2P." target="_blank" class="bg-crimson hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WA</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Suprema -->
-            <div class="card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
-                <div class="relative h-48 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+            <!-- 4. Conta Suprema (High Ticket) -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 flex-shrink-0 snap-center card-premium rounded-2xl overflow-hidden flex flex-col transition hover:border-gold/50">
+                <div class="relative h-40 bg-zinc-900 w-full overflow-hidden border-b border-zinc-800 flex items-center justify-center">
                     <img src="https://placehold.co/600x400/09090b/f59e0b?text=Print+da+Conta" class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300">
                 </div>
                 <div class="p-5 flex flex-col flex-1">
-                    <div class="flex justify-between items-center mb-4">
+                    <div class="flex justify-between items-center mb-5 mt-1">
                         <h3 class="font-black text-xl uppercase tracking-wide">SUPREMA</h3>
                         <span class="bg-emerald-500/20 text-emerald-400 text-[10px] uppercase font-bold px-2 py-1 rounded border border-emerald-500/30">Disponível</span>
                     </div>
-                    <div class="grid grid-cols-2 gap-y-4 text-xs text-zinc-300 mb-6">
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🏆 Nível:</span> <strong class="text-white">33</strong></div>
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🧳 Maletas:</span> <strong class="text-emerald-400">10.500</strong></div>
-                        <div class="flex items-center gap-2"><span class="text-zinc-500">🪙 Tokens:</span> <strong class="text-gold">1.800</strong></div>
-                        <div class="col-span-2 flex items-center gap-2 pt-2 border-t border-zinc-800"><span class="text-zinc-500">🔑 Login:</span> <strong class="text-white">Facebook</strong></div>
+                    
+                    <!-- Lista Vertical Alinhada -->
+                    <div class="space-y-3 text-xs mb-6 flex-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🏆</span> Nível:</span>
+                            <strong class="text-white">1 ou 2</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🧳</span> Maletas:</span>
+                            <strong class="text-emerald-400">10.500</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🪙</span> Tokens:</span>
+                            <strong class="text-gold">1.800</strong>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-zinc-800">
+                            <span class="text-zinc-500 flex items-center gap-2"><span class="text-sm">🔑</span> Login:</span>
+                            <strong class="text-white">Facebook</strong>
+                        </div>
                     </div>
+
                     <div class="mt-auto pt-4 flex items-center justify-between">
                         <div class="text-2xl font-black text-white">R$ 390</div>
-                        <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Suprema." target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WhatsApp</a>
+                        <a href="https://wa.me/5500000000000?text=Quero%20a%20Conta%20Suprema." target="_blank" class="bg-[#25D366] hover:bg-[#1ebd5a] text-black font-bold py-2 px-4 rounded-lg text-xs flex items-center gap-2 transition-colors">Comprar no WA</a>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -336,6 +502,12 @@
         <div class="text-center mb-10">
             <h2 class="text-3xl font-black mb-3">⚙️ Planos de <span class="text-crimson">Coleta Automática</span></h2>
             <p class="text-zinc-400 text-sm">Compare os planos e deixe a coleta diária com o Sindicato FC Lab.</p>
+            
+            <!-- Aviso de Escopo da Operação -->
+            <div class="mt-6 inline-block bg-crimson/10 border border-crimson/30 rounded-lg px-6 py-3 shadow-glow-red">
+                <p class="text-xs md:text-sm text-crimson font-black uppercase tracking-wide">⚠️ Operação de Segunda a Sexta-feira</p>
+                <p class="text-xs text-zinc-400 mt-1">A gestão e as coletas durante o fim de semana ficam a cargo do treinador.</p>
+            </div>
         </div>
         <div class="card-premium rounded-2xl overflow-hidden border-zinc-800">
             <div class="overflow-x-auto">
@@ -437,10 +609,33 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+<!-- FOOTER -->
     <footer class="bg-carbon py-10 text-center text-zinc-500 border-t border-zinc-900 mt-10">
-        <p class="font-bold text-zinc-400 mb-2 uppercase tracking-widest text-xs">Sindicato FC LAB | Prancheta PHDA7</p>
-        <p class="text-sm">Matemática e Engenharia Reversa para Top Eleven.</p>
+        <div class="max-w-6xl mx-auto px-4 flex flex-col items-center">
+            
+            <!-- Redes Sociais -->
+            <div class="flex gap-6 mb-6">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@pranchetaphda7" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-crimson transition-colors duration-300" title="Canal Prancheta do PHDA7">
+                    <span class="sr-only">YouTube</span>
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                
+                <!-- Instagram (Opcional - apague este bloco <a> se não quiser usar) -->
+                <a href="https://instagram.com/SEU_INSTA_AQUI" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-pink-500 transition-colors duration-300" title="Instagram">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Textos de Copyright -->
+            <p class="font-bold text-zinc-400 mb-2 uppercase tracking-widest text-xs">Sindicato FC LAB | Prancheta PHDA7</p>
+            <p class="text-sm">Matemática e Engenharia Reversa para Top Eleven.</p>
+        </div>
     </footer>
 
     <!-- SCRIPT DO MOTOR 180% -->
